@@ -28,6 +28,7 @@ header h1 {
 main {
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
 }
 
 .filtres {
@@ -37,6 +38,7 @@ main {
 	padding: 8px;
 	min-width: 300px;
 	min-height: 400px;
+	flex: 1;
 }
 .filtres h3 {
 	text-align: center;
@@ -46,8 +48,9 @@ main {
 	flex: 1;
 	margin: 8px;
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	grid-template-columns: repeat(2, 1fr);
 	gap: 4px;
+	flex: 4;
 }
 .fiches article {
 	border: 1px solid black;
@@ -65,4 +68,11 @@ main {
 }
 .fiches article h2 {
 	text-align: center;
+}
+
+@media ( min-width: 800px) {
+	.fiches {
+		grid-template-columns: repeat(3, 1fr);
+	}
+	
 }

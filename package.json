@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "json-server --port 8081 --no-cors db.json",
-    "dev": "concurrently \"npx json-server --port 8081 db.json --static public\" \"npx live-server public --port=8081\""
+    "start": "json-server --port 8081 --no-cors db.json"
   },
   "author": "",
   "license": "ISC",

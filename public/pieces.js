@@ -1,4 +1,4 @@
-import { ajoutListenerAvis, ajoutListenerEnvoyerAvis } from "./avis.js"
+import { ajoutListenerAvis, ajoutListenerEnvoyerAvis, afficherAvis } from "./avis.js"
 
 const boutonTrier = document.querySelector(".btn-trier")
 const boutonTrierDecroissant = document.querySelector(".btn-trier-decroissant")
@@ -6,7 +6,7 @@ const btnFiltrerDescription = document.querySelector(".btn-filtrer-description")
 const boutonFiltrer = document.querySelector(".btn-filtrer")
 const boutonRange = document.querySelector("#prix")
 let afficherPrix = document.querySelector(".prixAffichee")
-let pieces =  window.localStorage.getItem("pieces")
+let pieces = window.localStorage.getItem("pieces")
 const boutonMettreAJour = document.querySelector(".btn-maj")
 
 boutonMettreAJour.addEventListener("click", () => {
@@ -20,10 +20,22 @@ if (pieces === null) {
     window.localStorage.setItem("pieces", valeurPieces);
 } else {
     pieces = JSON.parse(pieces)
-}
+} 
 
 generatePieces(pieces)
+
 ajoutListenerEnvoyerAvis()
+
+for (let i = 0; i < pieces.length; i++) {
+    const id = pieces[i].id;
+    const avisJSON = window.localStorage.getItem(`avis-piece-${id}`);
+    const avis = JSON.parse(avisJSON);
+
+    if (avis !== null) {
+        const pieceElement = document.querySelector(`article[data-id="${id}"]`);
+        afficherAvis(pieceElement, avis)
+    }
+}
 // Trier par range
 boutonRange.addEventListener("input", () => {
     genererPiecesDisponibles()
@@ -104,6 +116,7 @@ function generatePieces(pieces) {
         const isStock = document.createElement("p")
         isStock.innerText = `${article.disponibilite ? "En stock" : "Plus en stock"}`
         const containerFiche = document.createElement("article")
+        containerFiche.dataset.id = article.id
         const sectionFiches = document.querySelector(".fiches")
         const avisBouton = document.createElement("button")
         avisBouton.dataset.id = article.id
