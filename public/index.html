@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="utf-8">
+	<title>Les Bonnes Pièces</title>
+	<link rel="stylesheet" href="styles.css">
+	<script type="module" src="pieces.js"></script>
+</head>
+
+<body>
+	<header>
+		<img src="images/logo-les-bonnes-pieces.png" alt="LOGO">
+		<h1>Les Bonnes Pièces</h1>
+	</header>
+	<main>
+		<!-- Menu de recherche -->
+		<section class="filtres">
+			<h3>Filtres</h3>
+			<button class="btn-trier">Trier par prix croissant</button>
+			<button class="btn-trier-decroissant">Trier par prix decroissant</button>
+			<br>
+			<button class="btn-filtrer">Filtrer les pièces non abordables</button>
+			<button class="btn-filtrer-description">Filtrer les pièces avec une description</button>
+			<label for="prix">Fourchette de prix</label>
+			<input type="range" id="prix" name="prix" min="0" max="60" step="5" value="30">
+			<input type="text" value="30" readonly class="prixAffichee">
+			
+			<!-- code a ajouter -->
+			<h3>Ajouter un avis</h3>
+			<form class="formulaire-avis">
+				Identifiant de la pièce :<br>
+				<input type="number" name="piece-id"><br>
+				Nom d'utilisateur :<br>
+				<input type="text" name="utilisateur"><br>
+				Avis :<br>
+				<input type="text" name="commentaire"><br>
+				<input type="number" name="note" min="0" max="5"><br>
+				<button>Envoyer</button>
+			</form>
+		</section>
+
+		<!-- Fiches produits -->
+		<section class="fiches">
+		</section>
+	</main>
+</body>
+
+</html>
