@@ -11,14 +11,13 @@ export function ajoutListenerAvis() {
 
             for (let i = 0; i < avis.length; i++) {
                 avisElement.innerHTML += `${avis[i].utilisateur} : ${avis[i].commentaire} <br>`
-                }
-
-            parentElement.appendChild(avisElement)            
+            }
+            parentElement.appendChild(avisElement)
         })
     }
 }
 
-export function ajoutListenerEnvoyerAvis () {
+export function ajoutListenerEnvoyerAvis() {
     const formulaireAvis = document.querySelector('.formulaire-avis')
     formulaireAvis.addEventListener("submit", (e) => {
         e.preventDefault()
@@ -28,16 +27,14 @@ export function ajoutListenerEnvoyerAvis () {
             commentaire: e.target.querySelector("[name=commentaire]").value,
             nbEtoiles: parseInt(e.target.querySelector("[name=note]").value)
         }
-        
+
         const chargeUtile = JSON.stringify(avis)
         console.log(chargeUtile);
-        
+
         fetch("http://localhost:8081/avis", {
             method: "POST",
-            headers: {"Content-Type": "application/json"},
+            headers: { "Content-Type": "application/json" },
             body: chargeUtile
         })
-        
-        
     })
 }

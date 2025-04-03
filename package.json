@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "json-server --port 8081 --no-cors db.json"
+    "start": "json-server --port 8081 --no-cors db.json",
+    "dev": "concurrently \"npx json-server --port 8081 db.json --static public\" \"npx live-server public --port=8081\""
   },
   "author": "",
   "license": "ISC",
@@ -14,6 +15,8 @@
     "start": "^5.1.0"
   },
   "devDependencies": {
-    "@faker-js/faker": "^6.3.1"
+    "@faker-js/faker": "^6.3.1",
+    "concurrently": "^9.1.2",
+    "live-server": "^1.2.2"
   }
 }

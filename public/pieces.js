@@ -7,6 +7,11 @@ const boutonFiltrer = document.querySelector(".btn-filtrer")
 const boutonRange = document.querySelector("#prix")
 let afficherPrix = document.querySelector(".prixAffichee")
 let pieces =  window.localStorage.getItem("pieces")
+const boutonMettreAJour = document.querySelector(".btn-maj")
+
+boutonMettreAJour.addEventListener("click", () => {
+    window.localStorage.removeItem("pieces")
+})
 
 if (pieces === null) {
     const reponse = await fetch('http://localhost:8081/pieces')
