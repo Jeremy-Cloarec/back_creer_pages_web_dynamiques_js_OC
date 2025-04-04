@@ -226,47 +226,6 @@
       "utilisateur": "sd",
       "commentaire": "sds",
       "id": 27
-    },
-    {
-      "pieceId": 1,
-      "utilisateur": "GG",
-      "commentaire": "Jerem",
-      "id": 28
-    },
-    {
-      "pieceId": 1,
-      "utilisateur": "Cloclo",
-      "commentaire": "Super ! ",
-      "nbEtoiles": "5",
-      "id": 29
-    },
-    {
-      "pieceId": 2,
-      "utilisateur": "Jerem",
-      "commentaire": "trop bien !!!",
-      "nbEtoiles": 4,
-      "id": 30
-    },
-    {
-      "pieceId": 1,
-      "utilisateur": "Cors",
-      "commentaire": "Lalal",
-      "nbEtoiles": 4,
-      "id": 31
-    },
-    {
-      "pieceId": 1,
-      "utilisateur": "Server",
-      "commentaire": "Ca fonctionne ?",
-      "nbEtoiles": 2,
-      "id": 32
-    },
-    {
-      "pieceId": 5,
-      "utilisateur": "pieceid",
-      "commentaire": "pieceID",
-      "nbEtoiles": 2,
-      "id": 33
     }
   ]
 }

@@ -1,4 +1,4 @@
-import { ajoutListenerAvis, ajoutListenerEnvoyerAvis, afficherAvis } from "./avis.js"
+import { ajoutListenerAvis, ajoutListenerEnvoyerAvis, afficherAvis,afficherGraphiqueAvis, afficherAvisPieceDispo } from "./avis.js"
 
 const boutonTrier = document.querySelector(".btn-trier")
 const boutonTrierDecroissant = document.querySelector(".btn-trier-decroissant")
@@ -174,6 +174,9 @@ function genererPiecesAbordables() {
     containerArticle.appendChild(abordablesElement)
     sectionFiches.appendChild(containerArticle)
 }
+
+afficherGraphiqueAvis()
+afficherAvisPieceDispo(pieces)
 
 
 
