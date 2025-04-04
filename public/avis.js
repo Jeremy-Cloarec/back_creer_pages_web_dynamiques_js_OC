@@ -77,7 +77,8 @@ export async function afficherGraphiqueAvis() {
         },
     };
 
-    // Rendu du graphique dans l'élément canvas
+    // eslint-disable-next-line no-unused-vars
+    // eslint-disable-next-line no-undef
     const graphiqueAvis = new Chart(
         document.querySelector("#graphique-avis"),
         config,
@@ -107,16 +108,18 @@ export async function afficherAvisPieceDispo(pieces) {
     }
 
     const config = {
+
         type: "bar",
         data: data,
     }
 
+    // eslint-disable-next-line no-unused-vars
+    // eslint-disable-next-line no-undef
     const graphiquePiecesDispo = new Chart(
         document.querySelector("#graphique-piece-dispo"),
         config,
     )
 }
-
 
 async function calculerNombrePiece(arr) {
     let piecesNumber = 0
