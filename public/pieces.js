@@ -1,4 +1,4 @@
-import { ajoutListenerAvis, ajoutListenerEnvoyerAvis, afficherAvis,afficherGraphiqueAvis, afficherAvisPieceDispo } from "./avis.js"
+import { ajoutListenerAvis, ajoutListenerEnvoyerAvis, afficherAvis, afficherGraphiqueAvis, afficherAvisPieceDispo } from "./avis.js"
 
 const boutonTrier = document.querySelector(".btn-trier")
 const boutonTrierDecroissant = document.querySelector(".btn-trier-decroissant")
@@ -14,13 +14,13 @@ boutonMettreAJour.addEventListener("click", () => {
 })
 
 if (pieces === null) {
-    const reponse = await fetch('http://localhost:8081/pieces')
+    const reponse = await fetch('http://localhost:8080/pieces')
     pieces = await reponse.json()
     const valeurPieces = JSON.stringify(pieces)
     window.localStorage.setItem("pieces", valeurPieces);
 } else {
     pieces = JSON.parse(pieces)
-} 
+}
 
 generatePieces(pieces)
 

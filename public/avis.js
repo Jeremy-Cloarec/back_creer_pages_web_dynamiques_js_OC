@@ -6,7 +6,7 @@ export function ajoutListenerAvis() {
         piecesElement[i].addEventListener("click", async (event) => {
 
             const id = event.target.dataset.id
-            const reponse = await fetch(`http://localhost:8081/pieces/${id}/avis`)
+            const reponse = await fetch(`http://localhost:8080/pieces/${id}/avis`)
             const avis = await reponse.json()
             window.localStorage.setItem(`avis-piece-${id}`, JSON.stringify(avis))
             const parentElement = event.target.parentElement
@@ -39,7 +39,7 @@ export function ajoutListenerEnvoyerAvis() {
         const chargeUtile = JSON.stringify(avis)
         console.log(chargeUtile);
 
-        fetch("http://localhost:8081/avis", {
+        fetch("http://localhost:8080/avis", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: chargeUtile
@@ -49,7 +49,7 @@ export function ajoutListenerEnvoyerAvis() {
 
 export async function afficherGraphiqueAvis() {
     // Calcul du nombre total de commentaires par quantité d'étoiles attribuées
-    const avis = await fetch("http://localhost:8081/avis").then(avis => avis.json());
+    const avis = await fetch("http://localhost:8080/avis").then(avis => avis.json());
     const nb_commentaires = [0, 0, 0, 0, 0];
     for (let commentaire of avis) {
         nb_commentaires[commentaire.nbEtoiles - 1]++;
@@ -128,7 +128,7 @@ async function calculerNombrePiece(arr) {
         let id = arr[i].id
 
         try {
-            const piece = await fetch(`http://localhost:8081/pieces/${id}/avis`).then(avis => avis.json())
+            const piece = await fetch(`http://localhost:8080/pieces/${id}/avis`).then(avis => avis.json())
             piecesNumber += piece.length
 
         } catch (error) {

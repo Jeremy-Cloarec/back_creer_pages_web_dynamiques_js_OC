@@ -4,15 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "json-server --port 8081 --no-cors db.json",
+    "start": "json-server -s ./public --port 8080 --host 0.0.0.0 db.json",
     "lint": "npx eslint"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "json-server": "^0.17.0",
-    "npm": "^11.2.0",
-    "start": "^5.1.0"
+    "npm": "^11.2.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.23.0",
