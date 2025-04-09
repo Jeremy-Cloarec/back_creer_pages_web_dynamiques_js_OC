@@ -1,29 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Seymour+One&display=swap');
+
+:root {
+	--brown : #BA6E08;
+	--brown-light : #FFECD3;
+	--green:#168200;
+	--white:#FFFFFF;
+	--black:#342819;
+	--gray:#D9D9D9;
+	--box-shadow: 1px 2px 8.7px rgba(0, 0, 0, 0.163);
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
 
 body {
-	max-width: 1200px;
-	margin: auto;
-	padding: 16px;
-	font-family: 'Montserrat', sans-serif;
+	font-family: "Roboto", sans-serif;
+	color: var(--black);
+	font-style: normal;
 }
 
-header {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	margin-bottom: 16px;
-	padding: 8px;
-	background-color: #7451eb;
-	text-align: center;
-	color: white;
+a {
+	text-decoration: none;
+	color: var(--black);
 }
-header img {
-	height: 60px;
-	margin-left: 1rem;
-}
-header h1 {
-	flex-grow: 1;
-}
+
 
 main {
 	display: flex;

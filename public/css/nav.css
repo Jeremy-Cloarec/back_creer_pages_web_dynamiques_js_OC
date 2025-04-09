@@ -1,0 +1,21 @@
+nav {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+}
+
+nav > img {
+    width: 90px;
+    height: auto;
+}
+
+.contact-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--brown-light);
+    padding: 16px 24px; 
+    border-radius: 24px;
+}
