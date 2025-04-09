@@ -23,7 +23,7 @@ jobs:
       - name: Delete old container
         run: docker rm -f les_bonnes_pieces-server || true
       - name: Run docker container
-        run: docker run -d -p 8080:8080 -name les_bonnes_pieces-server ${{secrets.DOCKERHUB_USERNAME}}/les_bonnes_pieces-server:latest
+        run: docker run -d -p 8080:8080 --name les_bonnes_pieces-server ${{secrets.DOCKERHUB_USERNAME}}/les_bonnes_pieces-server:latest
 
 
         
