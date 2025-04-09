@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "json-server -s ./public --port 8080 --host 0.0.0.0 db.json",
+    "start": "node server.js",
     "lint": "npx eslint"
   },
   "author": "",
