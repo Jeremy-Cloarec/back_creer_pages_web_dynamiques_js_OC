@@ -1,6 +1,7 @@
 import { ajoutListenerAvis } from "./avis.js"
+import { button } from "./button.js"
 
-export function generatePieces( pieces) {
+export function generatePieces(pieces) {
     createResumePieces(pieces)
 
     for (let i = 0; i < pieces.length; i++) {
@@ -18,12 +19,9 @@ export function generatePieces( pieces) {
         const isStock = document.createElement("p")
         isStock.innerText = `${article.disponibilite ? "En stock" : "Plus en stock"}`
         const containerFiche = document.createElement("article")
+        containerFiche.classList.add("article-produit")
         containerFiche.dataset.id = article.id
         const sectionFiches = document.querySelector(".fiches")
-        const avisBouton = document.createElement("button")
-        avisBouton.dataset.id = article.id
-        avisBouton.textContent = "Afficher les avis"
-        avisBouton.classList.add("avisBouton")
 
         sectionFiches.appendChild(containerFiche)
         containerFiche.appendChild(imageElement)
@@ -32,22 +30,24 @@ export function generatePieces( pieces) {
         containerFiche.appendChild(categorieElement)
         containerFiche.appendChild(descriptionElement)
         containerFiche.appendChild(isStock)
-        containerFiche.appendChild(avisBouton)
-    }
 
+        button(containerFiche, "Afficher les avis", "showAdvice", article.id)
+        button(containerFiche, "Ecrire un avis", "writeAdvice", article.id)
+    }
     ajoutListenerAvis()
 }
 
 export function createResumePieces(pieces) {
     const sectionFiches = document.querySelector(".fiches")
     const articleResume = document.createElement("article")
+    articleResume.classList.add("resume")
     sectionFiches.appendChild(articleResume)
 
     genererPiecesDisponibles(articleResume, pieces)
-    genererPiecesDisponibles(articleResume, pieces)
+    genererPiecesAbordables(articleResume, pieces)
 }
 
-export function genererPiecesDisponibles( articleResume, pieces ) {
+function genererPiecesDisponibles(articleResume, pieces) {
     const containerArticle = document.createElement("div")
     const disponibleElement = document.createElement("ul")
     const titleArticle = document.createElement("h2")
@@ -64,7 +64,7 @@ export function genererPiecesDisponibles( articleResume, pieces ) {
     articleResume.appendChild(containerArticle)
 }
 
-export function genererPiecesAbordables(articleResume, pieces) {
+function genererPiecesAbordables(articleResume, pieces) {
     const containerArticle = document.createElement("div")
     const abordablesElement = document.createElement("ul")
     const titleArticle = document.createElement("h2")

@@ -18,12 +18,13 @@ export function ajoutListenerAvis() {
 }
 
 export function afficherAvis(piecesElement, avis) {
+    // todo : createModale
     const avisElement = document.createElement("p")
 
     for (let i = 0; i < avis.length; i++) {
         avisElement.innerHTML += `${avis[i].utilisateur} : ${avis[i].commentaire} <br>`
     }
-    piecesElement.appendChild(avisElement)
+    // piecesElement.appendChild(avisElement)
 }
 
 // export function ajoutListenerEnvoyerAvis() {

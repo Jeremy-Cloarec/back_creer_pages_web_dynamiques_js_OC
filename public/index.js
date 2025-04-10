@@ -1,8 +1,8 @@
-import { /* ajoutListenerEnvoyerAvis,*/ afficherAvis, afficherGraphiqueAvis, afficherAvisPieceDispo } from "./avis.js"
-import { PORT } from "./port.js"
-import { showMenu, hideMenu } from "./menu.js"
-import { generatePieces, createResumePieces} from './generatePieces.js'
-import { mettreAJour, trierOrdreCroissant, trierOrdreDecroissant, trierParRange, trierPiecesAvecDescription, trierPiecesPasAbordables } from "./filteringPieces.js"
+import { /* ajoutListenerEnvoyerAvis,*/ afficherAvis, afficherGraphiqueAvis, afficherAvisPieceDispo } from "./js/avis.js"
+import { PORT } from "./js/port.js"
+import { showMenu, hideMenu } from "./js/menu.js"
+import { generatePieces, createResumePieces} from './js/generatePieces.js'
+import { mettreAJour, trierOrdreCroissant, trierOrdreDecroissant, trierParRange, trierPiecesAvecDescription, trierPiecesPasAbordables } from "./js/filteringPieces.js"
 
 const boutonTrier = document.querySelector("#asc")
 const boutonTrierDecroissant = document.querySelector("#desc")
@@ -14,7 +14,6 @@ let pieces = window.localStorage.getItem("pieces")
 const boutonMettreAJour = document.querySelector(".btn-maj")
 const showMenuButton = document.querySelector(".menu")
 const hideMenuButton = document.querySelector(".btn-fermer")
-const articleResume = document.querySelector(".resume")
 
 showMenu(showMenuButton)
 hideMenu(hideMenuButton)
@@ -27,8 +26,6 @@ if (pieces === null) {
 } else {
     pieces = JSON.parse(pieces)
 }
-
-mettreAJour(boutonMettreAJour, generatePieces, pieces, boutonRange, afficherPrix)
 
 generatePieces(pieces)
 
@@ -46,7 +43,7 @@ for (let i = 0; i < pieces.length; i++) {
 }
 
 // Fonction pour trier les produits
-
+mettreAJour(boutonMettreAJour, generatePieces, pieces, boutonRange, afficherPrix)
 // Trier par range
 trierParRange(boutonRange,generatePieces, pieces, afficherPrix)
 

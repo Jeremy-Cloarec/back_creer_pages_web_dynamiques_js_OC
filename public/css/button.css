@@ -1,0 +1,31 @@
+.fiches article button {
+    padding: 14px 22px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.showAdvice {
+    background-color: var(--brown);
+    border: 1px solid var(--brown);
+    color: var(--white);
+    transition: all 0.3s ease;
+
+    &&:hover {
+        border: 1px solid var(--brown-dark);
+        background-color: var(--brown-dark); 
+    }
+}
+
+.writeAdvice {
+    background: var(--white);
+    border: 1px solid var(--brown);
+    color: var(--brown);
+
+    transition: all 0.3s ease;
+
+    &&:hover {
+        background-color: var(--brown-light);
+    }
+
+}
