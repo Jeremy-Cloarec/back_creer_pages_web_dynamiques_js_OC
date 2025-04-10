@@ -37,5 +37,5 @@ h1 {
     text-align: center;
     padding: 50px 50px;
     color: var(--brown);
-    background-color: var(--white);
+    background-color: rgba(255, 255, 255, 0.863);
 }

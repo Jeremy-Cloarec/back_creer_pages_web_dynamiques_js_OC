@@ -1,0 +1,19 @@
+.fiches h2 {
+    text-align: left;
+}
+
+.fiches {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 16px;
+}
+
+.fiches article img {
+	width: 100%;
+}
+
+@media ( min-width: 1024px) {
+	.fiches {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}

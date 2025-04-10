@@ -8,9 +8,13 @@
 	<link rel="stylesheet" href="styles.css">
 	<link rel="stylesheet" href="css/nav.css">
 	<link rel="stylesheet" href="css/header.css">
-	<script type="module" src="pieces.js"></script>
+	<link rel="stylesheet" href="css/filtres.css
+	">
+	<link rel="stylesheet" href="css/pieces.css">
+	<script type="module" src="js/index.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
 </head>
+
 <body>
 	<nav>
 		<img src="images/logo.png" alt="logo" width="90" height="auto">
@@ -25,21 +29,65 @@
 		<h1>Les Bonnes Pièces</h1>
 	</header>
 	<main>
-		<!-- Menu de recherche -->
-		<section class="filtres">
-			<h3>Filtres</h3>
-			<button class="btn-trier">Trier par prix croissant</button>
-			<button class="btn-trier-decroissant">Trier par prix decroissant</button>
-			<br>
-			<button class="btn-filtrer">Filtrer les pièces non abordables</button>
-			<button class="btn-filtrer-description">Filtrer les pièces avec une description</button>
-			<label for="prix">Fourchette de prix</label>
-			<input type="range" id="prix" name="prix" min="0" max="60" step="5" value="30">
-			<input type="text" value="30" readonly class="prixAffichee">
-
-			<!-- code a ajouter -->
-			<h3>Ajouter un avis</h3>
-			<form class="formulaire-avis">
+		<!-- Filtres de recherche -->
+		<button class="menu">
+			Filtres
+		</button>
+		<aside class="filtres">
+			<button class="btn-fermer">
+				Fermer ❌
+			</button>
+			<div class="conteneur-filtres">
+				<h2>Filtres</h2>
+				<fieldset class="filtres-radio">
+					<div>
+						<input type="radio" id="asc" value="asc" name="trie">
+						<label for="asc">Prix croissant</label>
+					</div>
+					<div>
+						<input type="radio" id="desc" value="desc" name="trie">
+						<label for="desc">Prix decroissant</label>
+					</div>
+					<div>
+						<input type="radio" id="abordable" value="abordable" name="trie">
+						<label for="abordable">Pas abordables</label>
+					</div>
+					<div>
+						<input type="radio" id="description" value="description" name="trie">
+						<label for="description">Avec description</label>
+					</div>
+				</fieldset>
+				<label for="prix">Fourchette de prix</label>
+				<div class="filtres-range">
+					<div class="range">
+						<input type="range" list="tickmarks" id="prix" name="prix" min="0" max="60" step="5" value="30">
+						<datalist id="tickmarks">
+							<option value="0" label="0€"></option>
+							<option value="5"></option>
+							<option value="10"></option>
+							<option value="15"></option>
+							<option value="20"></option>
+							<option value="25"></option>
+							<option value="30"></option>
+							<option value="35"></option>
+							<option value="40"></option>
+							<option value="45"></option>
+							<option value="50"></option>
+							<option value="55"></option>
+							<option value="60" label="60€">
+							</option>
+						</datalist>
+						<div class="valeurs-range">
+							<span>0</span>
+							<span>30</span>
+							<span>60</span>
+						</div>
+					</div>
+					<input type="text" value="30" readonly class="prixAffichee">
+				</div>
+				<button class="btn-maj">Réinitialiser les filtres</button>
+			</div>
+			<!-- <form class="formulaire-avis">
 				Identifiant de la pièce :<br>
 				<input type="number" name="piece-id"><br>
 				Nom d'utilisateur :<br>
@@ -48,19 +96,17 @@
 				<input type="text" name="commentaire"><br>
 				<input type="number" name="note" min="0" max="5"><br>
 				<button>Envoyer</button>
-			</form>
-			<h3>Données</h3>
-			<button class="btn-maj">Mettre à jour les pièces</button>
+			</form> -->
+			<h2>Données</h2>
 			<h3>Aperçu des avis</h3>
 			<canvas id="graphique-avis" width="300" height="300"></canvas>
-			<h3>Aperçu desavis par pièces disponibles</h3>
+			<h3>Aperçu des avis par pièces disponibles</h3>
 			<canvas id="graphique-piece-dispo" width="300" height="300"></canvas>
-		</section>
+		</aside>
 
 		<!-- Fiches produits -->
 		<section class="fiches">
 		</section>
 	</main>
 </body>
-
 </html>

@@ -26,27 +26,27 @@ export function afficherAvis(piecesElement, avis) {
     piecesElement.appendChild(avisElement)
 }
 
-export function ajoutListenerEnvoyerAvis() {
-    const formulaireAvis = document.querySelector('.formulaire-avis')
-    formulaireAvis.addEventListener("submit", (e) => {
-        e.preventDefault()
-        const avis = {
-            pieceId: parseInt(e.target.querySelector("[name=piece-id]").value),
-            utilisateur: e.target.querySelector("[name=utilisateur]").value,
-            commentaire: e.target.querySelector("[name=commentaire]").value,
-            nbEtoiles: parseInt(e.target.querySelector("[name=note]").value)
-        }
+// export function ajoutListenerEnvoyerAvis() {
+//     const formulaireAvis = document.querySelector('.formulaire-avis')
+//     formulaireAvis.addEventListener("submit", (e) => {
+//         e.preventDefault()
+//         const avis = {
+//             pieceId: parseInt(e.target.querySelector("[name=piece-id]").value),
+//             utilisateur: e.target.querySelector("[name=utilisateur]").value,
+//             commentaire: e.target.querySelector("[name=commentaire]").value,
+//             nbEtoiles: parseInt(e.target.querySelector("[name=note]").value)
+//         }
 
-        const chargeUtile = JSON.stringify(avis)
-        console.log(chargeUtile);
+//         const chargeUtile = JSON.stringify(avis)
+//         console.log(chargeUtile);
 
-        fetch(`http://${PORT}:8080/avis`, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: chargeUtile
-        })
-    })
-}
+//         fetch(`http://${PORT}:8080/avis`, {
+//             method: "POST",
+//             headers: { "Content-Type": "application/json" },
+//             body: chargeUtile
+//         })
+//     })
+// }
 
 export async function afficherGraphiqueAvis() {
     // Calcul du nombre total de commentaires par quantité d'étoiles attribuées
