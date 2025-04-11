@@ -14,9 +14,12 @@ let pieces = window.localStorage.getItem("pieces")
 const boutonMettreAJour = document.querySelector(".btn-maj")
 const showMenuButton = document.querySelector(".menu")
 const hideMenuButton = document.querySelector(".btn-fermer")
+const filtreContainer = document.querySelector(".filtres")
+
 
 showMenu(showMenuButton)
 hideMenu(hideMenuButton)
+hideMenu(filtreContainer)
 scrollPosition(showMenuButton)
 
 if (pieces === null) {

@@ -46,6 +46,8 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
+    flex: 1;
+   justify-content: space-around;
 }
 
 .resume ul li {
@@ -128,6 +130,11 @@
 }
 
 
+@media ( min-width: 640px) {
+	.fiches {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
 @media ( min-width: 1024px) {
 	.fiches {
 		grid-template-columns: repeat(3, 1fr);
