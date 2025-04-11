@@ -42,8 +42,11 @@ main {
 	gap: 32px;
 }
 
-@media ( min-width: 726px) {
-	
+@media ( min-width: 1024px) {
+	main {
+		flex-direction: row;
+		padding: 32px;
+	}
 }
 
 

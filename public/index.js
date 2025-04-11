@@ -1,6 +1,6 @@
 import { /* ajoutListenerEnvoyerAvis,*/ afficherAvis, afficherGraphiqueAvis, afficherAvisPieceDispo } from "./js/avis.js"
 import { PORT } from "./js/port.js"
-import { showMenu, hideMenu, scrollPosition } from "./js/menu.js"
+import { showMenu, hideMenu } from "./js/menu.js"
 import { generatePieces, createResumePieces} from './js/generatePieces.js'
 import { mettreAJour, trierOrdreCroissant, trierOrdreDecroissant, trierParRange, trierPiecesAvecDescription, trierPiecesPasAbordables } from "./js/filteringPieces.js"
 
@@ -20,7 +20,6 @@ const filtreContainer = document.querySelector(".filtres")
 showMenu(showMenuButton)
 hideMenu(hideMenuButton)
 hideMenu(filtreContainer)
-scrollPosition(showMenuButton)
 
 if (pieces === null) {
     const reponse = await fetch(`http://${PORT}:8080/pieces`)
