@@ -4,6 +4,8 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 16px;
+    max-width: 1400px;
+    margin: auto;
 }
 
 nav > img {
@@ -18,4 +20,11 @@ nav > img {
     background: var(--brown-light);
     padding: 16px 24px; 
     border-radius: 24px;
+}
+
+@media ( min-width: 1024px) {
+	nav {
+		
+		padding: 16px 32px;
+	}
 }
