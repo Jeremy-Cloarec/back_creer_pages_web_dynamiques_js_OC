@@ -36,11 +36,40 @@
     flex: 1;
     box-shadow: var(--box-shadow);
     border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.resume ul {
     padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.resume ul li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.resume ul li::before {
+    content: "";
+    background-color: var(--brown-light2);
+    height: 10px;
+    width: 10px;
+    min-height: 10px;
+    min-width: 10px;
+    border-radius: 50%;
 }
 
 .resume h2 {
     background-color: var(--brown-light);
+    padding: 24px 12px;
+    border-radius: 24px 24px 0 0; 
+    font-family: "Seymour One", sans-serif;
+    font-size: 18px;
 }
 
 .fiches article > img {

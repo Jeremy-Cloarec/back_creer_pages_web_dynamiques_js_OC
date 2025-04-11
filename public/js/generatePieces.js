@@ -116,12 +116,12 @@ function genererPiecesAbordables(articleResume, pieces) {
     const containerArticle = document.createElement("div")
     const abordablesElement = document.createElement("ul")
     const titleArticle = document.createElement("h2")
-    titleArticle.textContent = "Pièces abordable"
+    titleArticle.textContent = "Pièces abordables"
 
     const piecesAbordables = pieces.filter(piece => piece.prix < 35)
     for (let i = 0; i < piecesAbordables.length; i++) {
         const nomElement = document.createElement("li")
-        nomElement.innerText = ` ${piecesAbordables[i].nom} - ${piecesAbordables[i].prix} €`
+        nomElement.innerHTML = `${piecesAbordables[i].nom} - ${piecesAbordables[i].prix}€`
         abordablesElement.appendChild(nomElement)
     }
     containerArticle.appendChild(titleArticle)

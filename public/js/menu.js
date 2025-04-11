@@ -10,3 +10,23 @@ export function hideMenu(btn) {
         filtres.classList.remove('show')
     })
 }
+
+export function scrollPosition(btn) {
+    const offsetTop = 500
+    const btnHeight = btn.offsetHeight
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY >= offsetTop) {
+            if (!btn.classList.contains("fixed")) {
+                btn.classList.add("fixed")
+                placeholder.style.display = "block"
+                placeholder.style.height = btnHeight + "px"; // réserve l’espace
+            }
+        } else {
+            if (btn.classList.contains("fixed")) {
+                btn.classList.remove("fixed")
+                placeholder.style.display = "none"
+            }
+        }
+    });
+}

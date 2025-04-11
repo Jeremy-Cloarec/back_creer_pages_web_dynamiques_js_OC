@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Seymour+One&display=swap');
 
 :root {
-	--brown : #BA6E08;
+	--brown : #9c5e0e;
 	--brown-dark: #7e4b08;
 	--brown-light2 : #fdc47a;
 	--brown-light : #FFECD3;
@@ -37,8 +37,9 @@ li {
 main {
 	position: relative;
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	padding: 32px 12px;
+	gap: 32px;
 }
 
 @media ( min-width: 726px) {
