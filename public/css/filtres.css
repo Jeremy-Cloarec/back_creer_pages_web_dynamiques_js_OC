@@ -31,10 +31,14 @@
     border: none;
     padding: 6px 12px;
     border-radius: 4px;
+    width: 100%;
+    background-color: var(--brown-light);
+    margin-bottom: 16px;
     transition: all 0.3s;
+    border-radius: 12px;
 
     &&:hover {
-        background-color: var(--brown-light);
+        background-color: var(--brown-light2);
     }
 }
 
