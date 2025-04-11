@@ -10,11 +10,17 @@ export function ajoutListenerAvis() {
             const reponse = await fetch(`http://${PORT}:8080/pieces/${id}/avis`)
             const avis = await reponse.json()
             window.localStorage.setItem(`avis-piece-${id}`, JSON.stringify(avis))
-            const parentElement = event.target.parentElement
-
+            const parentElement = event.target.parentElement            
             afficherAvis(parentElement, avis)
         })
     }
+}
+
+export async function compterAvis(id) {
+    const reponse = await fetch(`http://${PORT}:8080/pieces/${id}/avis`)
+    const avis = await reponse.json()
+    const moyenneEtoiles = await avis.map(avis => avis.nbEtoiles).reduce((a, b) => a + b)/avis.length
+    return [moyenneEtoiles, avis.length]
 }
 
 export function afficherAvis(piecesElement, avis) {
@@ -55,8 +61,6 @@ export async function afficherGraphiqueAvis() {
     const nb_commentaires = [0, 0, 0, 0, 0];
     for (let commentaire of avis) {
         nb_commentaires[commentaire.nbEtoiles - 1]++;
-        console.log(nb_commentaires[1]);
-
     }
     const labels = ["5", "4", "3", "2", "1"]
 
@@ -97,8 +101,6 @@ export async function afficherAvisPieceDispo(pieces) {
     const labels = ["Nomb", "Nomb"]
 
     const arrayData = [nombreAvisPieceDispo, nombreAvisPieceIndispo]
-    console.log(arrayData);
-
 
     const data = {
         labels: labels,
@@ -110,7 +112,6 @@ export async function afficherAvisPieceDispo(pieces) {
     }
 
     const config = {
-
         type: "bar",
         data: data,
     }

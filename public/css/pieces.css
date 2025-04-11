@@ -1,26 +1,103 @@
 .fiches h2 {
     font-size: 18px;
+    font-weight: 500;
 }
 
 .fiches {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
-	gap: 16px;
+	gap: 12px;
 }
 
-.fiches article {
+.green {
+    color: var(--green);
+}
+
+.red {
+    color: var(--red);
+}
+
+.fiches .article-produit  {
     box-shadow: var(--box-shadow);
     border-radius: 24px;
     padding: 12px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 16px;
 }
 
-.fiches article img {
+.resume {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.resume > div {
+    flex: 1;
+    box-shadow: var(--box-shadow);
+    border-radius: 24px;
+    padding: 12px;
+}
+
+.resume h2 {
+    background-color: var(--brown-light);
+}
+
+.fiches article > img {
 	width: 100%;
     border-radius: 12px;
 }
+.containerStar {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+.star {
+    width: 18px;
+    height: 18px;
+}
+
+.nbreAvis {
+    font-size: 12px;
+    flex: 1;
+    text-align: end;
+}
+
+.fiches .categorie {
+    background-color: var(--brown-light);
+    width: fit-content;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+.containerIsStockCategorie{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4px;
+}
+
+.description {
+    flex: 1;
+}
+
+.containerIsStockCategorie p{
+    font-size: 12px;
+}
+.containerPrix {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.containerPrix p {
+    font-size: 24px;
+    font-weight: 600;
+}
+.containerPrix span {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--brown-light2);
+}
+
 
 @media ( min-width: 1024px) {
 	.fiches {

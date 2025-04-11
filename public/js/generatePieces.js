@@ -1,7 +1,7 @@
-import { ajoutListenerAvis } from "./avis.js"
+import { ajoutListenerAvis, compterAvis } from "./avis.js"
 import { button } from "./button.js"
 
-export function generatePieces(pieces) {
+export async function generatePieces(pieces) {
     createResumePieces(pieces)
 
     for (let i = 0; i < pieces.length; i++) {
@@ -10,29 +10,77 @@ export function generatePieces(pieces) {
         imageElement.src = article.image
         const nomElement = document.createElement("h2")
         nomElement.innerText = article.nom
+        const containerPrix = document.createElement("div")
+        const containerStar = document.createElement("div")
+        containerStar.classList.add("containerStar")
+        const nbreAvis = document.createElement("span")
+        nbreAvis.classList.add("nbreAvis")
+        const containerIsStockCategorie = document.createElement("div")
+
+        containerPrix.classList.add("containerPrix")
         const prixElement = document.createElement("p")
-        prixElement.innerText = `Prix: ${article.prix} € (${article.prix < 35 ? "€" : "€€"})`
+        const prixAccessible = document.createElement("span")
+        prixAccessible.innerText = `${article.prix < 35 ? "€" : "€€"}`
+        prixElement.innerText = `${article.prix} €`
         const categorieElement = document.createElement("p")
+        categorieElement.classList.add("categorie")
         categorieElement.innerText = article.categorie ?? "(aucune categorie)"
         const descriptionElement = document.createElement("p")
+        descriptionElement.classList.add("description")
         descriptionElement.innerText = article.description ?? "(Pas encore de description)"
         const isStock = document.createElement("p")
-        isStock.innerText = `${article.disponibilite ? "En stock" : "Plus en stock"}`
+        isStock.innerText = `${article.disponibilite ? "En stock" : "Plus de stock"}`
+        article.disponibilite ? isStock.classList.add("green") : isStock.classList.add("red")
         const containerFiche = document.createElement("article")
         containerFiche.classList.add("article-produit")
         containerFiche.dataset.id = article.id
         const sectionFiches = document.querySelector(".fiches")
-
+        containerIsStockCategorie.classList.add("containerIsStockCategorie")
+        containerIsStockCategorie.appendChild(categorieElement)
+        containerIsStockCategorie.appendChild(isStock)
+        containerPrix.appendChild(prixElement)
+        containerPrix.appendChild(prixAccessible)
         sectionFiches.appendChild(containerFiche)
         containerFiche.appendChild(imageElement)
         containerFiche.appendChild(nomElement)
-        containerFiche.appendChild(prixElement)
-        containerFiche.appendChild(categorieElement)
         containerFiche.appendChild(descriptionElement)
-        containerFiche.appendChild(isStock)
+        containerFiche.appendChild(containerStar)
+        containerFiche.appendChild(containerIsStockCategorie)
+        containerFiche.appendChild(containerPrix)
 
         button(containerFiche, "Afficher les avis", "showAdvice", article.id)
         button(containerFiche, "Ecrire un avis", "writeAdvice", article.id)
+
+        const avisData = await compterAvis(article.id)
+        const [note, nombreAvis] = avisData
+
+        nbreAvis.textContent = `${nombreAvis} avis`
+
+        for (let index = 0; index < 5; index++) {
+            const star = document.createElement("span")
+            const img = document.createElement("img")
+            img.classList.add("star")
+            img.alt = "Icone etoile"
+
+            const difference = note - index;
+
+            if (difference >= 1) {
+                img.src = "images/starFill.png"
+            } else if (difference >= 0.75) {
+                img.src = "images/star075.png"
+            } else if (difference >= 0.5) {
+                img.src = "images/starHalf.png"
+            } else if (difference >= 0.25) {
+                img.src = "images/star025.png"
+            } else {
+                img.src = "images/star.png"
+            }
+
+
+            star.appendChild(img)
+            containerStar.appendChild(star)
+        }
+        containerStar.appendChild(nbreAvis)
     }
     ajoutListenerAvis()
 }
