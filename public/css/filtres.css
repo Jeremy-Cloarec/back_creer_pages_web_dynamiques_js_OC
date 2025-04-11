@@ -38,7 +38,22 @@
     }
 }
 
+.containerButton {
+    container-type: scroll-state;
+    position: sticky;
+    top: 32px;
+    width: 100%;
+
+    >.menu {
+        @container scroll-state(stuck: top) {
+            width: fit-content;
+            box-shadow: var(--box-shadow);
+        }
+    }
+}
+
 .menu {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -52,6 +67,8 @@
     transition: all 0.3s ease;
     cursor: pointer;
     font-weight: 600;
+
+
 
     &&:hover {
         background-color: var(--brown-light);
@@ -85,7 +102,7 @@
 .containerData {
     display: flex;
     flex-direction: column;
-    gap:16px;
+    gap: 16px;
 }
 
 .filtres-radio {
@@ -148,6 +165,7 @@
     font-size: 16px;
     transition: all 0.3s;
     cursor: pointer;
+
     &&:hover {
         background-color: var(--brown-dark);
     }
@@ -155,7 +173,7 @@
 
 .separator {
     height: 10px;
-    width:10px;
+    width: 10px;
     background-color: red;
 }
 
@@ -252,7 +270,7 @@ input[type=range]::-ms-thumb {
 }
 
 input[type=range]:focus::-ms-fill-lower {
-    background:var(--brown-light2);
+    background: var(--brown-light2);
 }
 
 input[type=range]:focus::-ms-fill-upper {
@@ -268,22 +286,23 @@ input[type=range]:focus::-ms-fill-upper {
     margin-left: 4px;
 }
 
-@media ( min-width: 640px) {
-	.menu-container {
+@media (min-width: 640px) {
+    .menu-container {
         width: 40%;
     }
 }
 
-@media ( min-width: 1024px) {
-	.filtres {
-		display: flex;
+@media (min-width: 1024px) {
+    .filtres {
+        display: flex;
         position: sticky;
         border-radius: 24px;
         width: 300px;
         height: fit-content;
-        top :32px;
-	}
-    .menu {
+        top: 32px;
+    }
+
+    .containerButton {
         display: none;
     }
 
@@ -297,7 +316,7 @@ input[type=range]:focus::-ms-fill-upper {
         height: fit-content;
         box-shadow: none;
     }
-    
+
     #placeholder {
         display: none;
     }

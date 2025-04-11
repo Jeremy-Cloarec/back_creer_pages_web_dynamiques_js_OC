@@ -40,6 +40,7 @@ main {
 	flex-direction: column;
 	padding: 32px 12px;
 	gap: 32px;
+	
 }
 
 @media ( min-width: 1024px) {
