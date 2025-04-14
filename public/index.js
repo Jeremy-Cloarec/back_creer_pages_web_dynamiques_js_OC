@@ -34,16 +34,16 @@ generatePieces(pieces)
 
 // ajoutListenerEnvoyerAvis()
 
-for (let i = 0; i < pieces.length; i++) {
-    const id = pieces[i].id;
-    const avisJSON = window.localStorage.getItem(`avis-piece-${id}`);
-    const avis = JSON.parse(avisJSON);
+// for (let i = 0; i < pieces.length; i++) {
+//     const id = pieces[i].id;
+//     const avisJSON = window.localStorage.getItem(`avis-piece-${id}`);
+//     const avis = JSON.parse(avisJSON);
 
-    if (avis !== null) {
-        const pieceElement = document.querySelector(`article[data-id="${id}"]`);
-        afficherAvis(pieceElement, avis)
-    }
-}
+//     if (avis !== null) {
+//         const pieceElement = document.querySelector(`article[data-id="${id}"]`);
+//         afficherAvis(pieceElement, avis)
+//     }
+// }
 
 // Fonction pour trier les produits
 mettreAJour(boutonMettreAJour, generatePieces, pieces, boutonRange, afficherPrix)

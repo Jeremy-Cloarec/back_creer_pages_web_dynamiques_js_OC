@@ -1,36 +1,98 @@
 import { PORT } from "./port.js"
-export function ajoutListenerAvis() {
-    const piecesElement = document.querySelectorAll(".avisBouton")
 
-    for (let i = 0; i < piecesElement.length; i++) {
+export function ajoutListenerAvis(button) {
 
-        piecesElement[i].addEventListener("click", async (event) => {
+    button.addEventListener("click", async (event) => {
+        const containerAdvice = document.querySelector("#popoverAdvice")
+        containerAdvice.innerHTML = ""
+        const headerPopover = document.createElement("div")
+        const h3 = document.createElement("h3")
+        const img = document.createElement("img")
+        const close = document.createElement("button")
+        close.textContent = "Fermer\u00A0❌"
+        close.setAttribute("popovertarget", "popoverAdvice")
+        close.setAttribute("popovertargetaction", "close")
+        containerAdvice.appendChild(h3)
+        const id = event.target.dataset.id
 
-            const id = event.target.dataset.id
-            const reponse = await fetch(`http://${PORT}:8080/pieces/${id}/avis`)
-            const avis = await reponse.json()
-            window.localStorage.setItem(`avis-piece-${id}`, JSON.stringify(avis))
-            const parentElement = event.target.parentElement            
-            afficherAvis(parentElement, avis)
-        })
-    }
+        const reponseImgPiece = await fetch(`http://${PORT}:8080/pieces/${id}`)
+        const imgPiece = await reponseImgPiece.json()
+
+        img.src = imgPiece.image
+        img.alt = "Photographie d'une " + imgPiece.nom
+        h3.textContent = imgPiece.nom
+
+        headerPopover.classList.add("headerPopover")
+
+        headerPopover.appendChild(img)
+        headerPopover.appendChild(h3)
+        headerPopover.appendChild(close)
+        containerAdvice.appendChild(headerPopover)
+
+
+        const reponse = await fetch(`http://${PORT}:8080/pieces/${id}/avis`)
+        const avis = await reponse.json()
+            ;
+
+
+        afficherAvis(containerAdvice, avis)
+    })
 }
 
 export async function compterAvis(id) {
     const reponse = await fetch(`http://${PORT}:8080/pieces/${id}/avis`)
     const avis = await reponse.json()
-    const moyenneEtoiles = await avis.map(avis => avis.nbEtoiles).reduce((a, b) => a + b)/avis.length
+    const moyenneEtoiles = await avis.map(avis => avis.nbEtoiles).reduce((a, b) => a + b) / avis.length
     return [moyenneEtoiles, avis.length]
 }
 
-export function afficherAvis(piecesElement, avis) {
-    // todo : createModale
-    const avisElement = document.createElement("p")
+export async function afficherAvis(container, avis) {
+    const avisElement = document.createElement("div")
 
     for (let i = 0; i < avis.length; i++) {
-        avisElement.innerHTML += `${avis[i].utilisateur} : ${avis[i].commentaire} <br>`
+        let note = avis[i].nbEtoiles
+        const containerStar = document.createElement("div")
+
+        for (let index = 0; index < 5; index++) {
+            let src
+            const difference = note - index;
+
+            if (difference >= 1) {
+                src = "images/starFill.png"
+            } else if (difference >= 0.75) {
+                src = "images/star075.png"
+            } else if (difference >= 0.5) {
+                src = "images/starHalf.png"
+            } else if (difference >= 0.25) {
+                src = "images/star025.png"
+            } else {
+                src = "images/star.png"
+            }
+
+            const img = document.createElement("img")
+            img.src = src;
+            img.alt = `icone etoile pour note ${note}/5`
+
+            containerStar.appendChild(img)
+        }
+
+        const avisDiv = document.createElement("div")
+        avisDiv.classList.add("containerAdvices")
+
+        const titre = document.createElement("h4")
+        titre.textContent = avis[i].utilisateur
+
+        const commentaire = document.createElement("p")
+        commentaire.textContent = avis[i].commentaire
+
+        avisDiv.appendChild(titre)
+        avisDiv.appendChild(containerStar)
+        avisDiv.appendChild(commentaire)
+
+        avisElement.appendChild(avisDiv)
     }
-    // piecesElement.appendChild(avisElement)
+
+    container.appendChild(avisElement)
 }
 
 // export function ajoutListenerEnvoyerAvis() {

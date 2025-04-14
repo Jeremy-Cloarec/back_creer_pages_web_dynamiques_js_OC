@@ -1,0 +1,36 @@
+:popover-open {
+    position: fixed;
+    max-width: 80%;
+    max-height: 80vh;
+    padding: 16px;
+    border: none;
+    border-radius: 16px;
+    box-shadow: var(--box-shadow);
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+::backdrop {
+    backdrop-filter: blur(3px);
+}
+
+#popoverAdvice img {
+    width: 34px;
+    height: auto;
+}
+
+.headerPopover {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.headerPopover button {
+    background: var(--brown-light);
+    border: none;
+    cursor: pointer;
+    color: var(--color-text);
+    font-size: 12px;
+}

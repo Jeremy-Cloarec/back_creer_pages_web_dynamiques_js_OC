@@ -1,5 +1,4 @@
 import { ajoutListenerAvis, compterAvis } from "./avis.js"
-import { button } from "./button.js"
 
 export async function generatePieces(pieces) {
     createResumePieces(pieces)
@@ -48,8 +47,23 @@ export async function generatePieces(pieces) {
         containerFiche.appendChild(containerIsStockCategorie)
         containerFiche.appendChild(containerPrix)
 
-        button(containerFiche, "Afficher les avis", "showAdvice", article.id)
-        button(containerFiche, "Ecrire un avis", "writeAdvice", article.id)
+        const showAdvices = document.createElement("button")
+        showAdvices.dataset.id = article.id
+        showAdvices.textContent = "Afficher les avis"
+        showAdvices.classList.add("showAdvice")
+        showAdvices.setAttribute("popovertarget", "popoverAdvice")
+        showAdvices.setAttribute("popovertargetaction", "show")
+        containerFiche.appendChild(showAdvices)
+        
+        const writeAdvice = document.createElement("button")
+        writeAdvice.dataset.id = article.id
+        writeAdvice.textContent =  "Ecrire un avis"
+        writeAdvice.classList.add("writeAdvice")
+        writeAdvice.setAttribute("popovertarget", "popoverForm")
+        writeAdvice.setAttribute("popovertargetaction", "show")
+        containerFiche.appendChild(writeAdvice)
+
+        ajoutListenerAvis(showAdvices)
 
         const avisData = await compterAvis(article.id)
         const [note, nombreAvis] = avisData
@@ -76,14 +90,13 @@ export async function generatePieces(pieces) {
                 img.src = "images/star.png"
             }
 
-
             star.appendChild(img)
             containerStar.appendChild(star)
         }
         containerStar.appendChild(nbreAvis)
     }
-    ajoutListenerAvis()
 }
+
 
 export function createResumePieces(pieces) {
     const sectionFiches = document.querySelector(".fiches")
