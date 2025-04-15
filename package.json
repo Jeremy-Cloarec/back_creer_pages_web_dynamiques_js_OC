@@ -5,7 +5,8 @@
   "main": "",
   "scripts": {
     "start": "npx json-server --host 0.0.0.0 -p 8080 db.json",
-    "lint": "npx eslint"
+    "lint": "npx eslint",
+    "pullDB":  "curl http://lesbonnespieces.jeremycloarec.com/db > db.json"
   },
   "author": "",
   "license": "ISC",
