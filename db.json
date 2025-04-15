@@ -49,183 +49,141 @@
       "id": 1,
       "pieceId": 1,
       "utilisateur": "Kristen Larson",
-      "commentaire": "Illum natus nisi aut modi dignissimos.",
+      "commentaire": "Éclaire super bien la route, je vois enfin clairement la nuit.",
       "nbEtoiles": 4
     },
     {
       "id": 2,
       "pieceId": 2,
       "utilisateur": "Alberto Kessler",
-      "commentaire": "Aut facere ullam velit odio vero aut hic.",
+      "commentaire": "Freinage très efficace, je me sens en sécurité même sous la pluie.",
       "nbEtoiles": 4
     },
     {
       "id": 3,
       "pieceId": 3,
       "utilisateur": "Shane Powlowski",
-      "commentaire": "Sint enim nesciunt laboriosam iusto aut.",
+      "commentaire": "Petite ampoule pratique, dommage qu'elle ne soit pas toujours en stock.",
       "nbEtoiles": 3
     },
     {
       "id": 4,
       "pieceId": 4,
       "utilisateur": "Grace Effertz",
-      "commentaire": "Et aut laborum voluptas culpa ut omnis vel.",
+      "commentaire": "Fait le travail, mais la bouteille est un peu petite.",
       "nbEtoiles": 2
     },
     {
       "id": 5,
       "pieceId": 5,
       "utilisateur": "Blanche Hane",
-      "commentaire": "Totam incidunt voluptatibus optio excepturi.",
+      "commentaire": "Essuie bien mais fait un peu de bruit après quelques semaines.",
       "nbEtoiles": 3
     },
     {
       "id": 6,
       "pieceId": 1,
       "utilisateur": "Catherine Kihn",
-      "commentaire": "Non laborum ex recusandae voluptatem laborum.",
+      "commentaire": "Bonne luminosité, facile à installer.",
       "nbEtoiles": 4
     },
     {
       "id": 7,
       "pieceId": 2,
       "utilisateur": "Jimmie Pfannerstill",
-      "commentaire": "Enim aut id ab corporis aut et rem.",
+      "commentaire": "Très bonne tenue de route après remplacement. Parfait !",
       "nbEtoiles": 5
     },
     {
       "id": 8,
       "pieceId": 3,
       "utilisateur": "Ms. Lydia Grady",
-      "commentaire": "Ipsum officia asperiores necessitatibus id quo laborum.",
+      "commentaire": "Éclaire bien le compartiment, pratique pour trouver ses affaires.",
       "nbEtoiles": 4
     },
     {
       "id": 9,
       "pieceId": 4,
       "utilisateur": "Cynthia Leuschke",
-      "commentaire": "Ea dolores sed aut.",
+      "commentaire": "Compatible avec ma voiture, simple à verser, bon prix.",
       "nbEtoiles": 5
     },
     {
       "id": 10,
       "pieceId": 5,
       "utilisateur": "Fannie Osinski DVM",
-      "commentaire": "Non sed est alias ex et omnis dolorum corrupti alias.",
+      "commentaire": "Très efficace sous la pluie, visibilité au top.",
       "nbEtoiles": 5
     },
     {
       "id": 11,
       "pieceId": 1,
       "utilisateur": "Melinda Bergstrom",
-      "commentaire": "Voluptas deserunt odit.",
+      "commentaire": "Changement radical de visibilité, j’adore.",
       "nbEtoiles": 5
     },
     {
       "id": 12,
       "pieceId": 2,
       "utilisateur": "Glen Bauch DVM",
-      "commentaire": "Harum consequatur in ex est itaque maxime consequuntur.",
+      "commentaire": "Montage facile, qualité correcte.",
       "nbEtoiles": 4
     },
     {
       "id": 13,
       "pieceId": 3,
       "utilisateur": "Melanie Fadel",
-      "commentaire": "Eos eum delectus sunt provident.",
+      "commentaire": "Ampoule discrète mais bien utile, bon rapport qualité/prix.",
       "nbEtoiles": 5
     },
     {
       "id": 14,
       "pieceId": 4,
       "utilisateur": "Amy Ernser",
-      "commentaire": "Sit enim velit esse dolor.",
+      "commentaire": "Liquide trop liquide ? La pédale me semble spongieuse.",
       "nbEtoiles": 1
     },
     {
       "id": 15,
       "pieceId": 5,
       "utilisateur": "Toby Russel",
-      "commentaire": "Voluptate ex cum aut tenetur laborum est.",
+      "commentaire": "Essuie correctement mais usure un peu rapide.",
       "nbEtoiles": 3
     },
     {
       "id": 16,
       "pieceId": 1,
       "utilisateur": "Frankie Ritchie",
-      "commentaire": "Dolore et explicabo et voluptas at aut saepe.",
+      "commentaire": "Je recommande, très bon éclairage et faible consommation.",
       "nbEtoiles": 5
     },
     {
       "id": 17,
       "pieceId": 2,
       "utilisateur": "Priscilla Sporer",
-      "commentaire": "Enim quibusdam et ipsum voluptas est.",
+      "commentaire": "Conforme à la description, bonne adhérence.",
       "nbEtoiles": 5
     },
     {
       "id": 18,
       "pieceId": 3,
       "utilisateur": "Adrian Cassin",
-      "commentaire": "Corrupti consequuntur deleniti voluptas eum officiis hic.",
+      "commentaire": "Éclairage suffisant pour une petite zone, fait le job.",
       "nbEtoiles": 4
     },
     {
       "id": 19,
       "pieceId": 4,
       "utilisateur": "Nicolas Lesch",
-      "commentaire": "Esse numquam consequatur et sunt.",
+      "commentaire": "Très bon liquide, pas de souci depuis la purge.",
       "nbEtoiles": 5
     },
     {
       "id": 20,
       "pieceId": 5,
       "utilisateur": "Hugo Block",
-      "commentaire": "Sint quidem quia ipsam quae.",
+      "commentaire": "Parfait même sous forte pluie, je recommande.",
       "nbEtoiles": 5
-    },
-    {
-      "pieceId": null,
-      "utilisateur": "Jeremy",
-      "commentaire": "Cloarec",
-      "id": 21
-    },
-    {
-      "pieceId": null,
-      "utilisateur": "Jeremy",
-      "commentaire": "Super produit !! ",
-      "id": 22
-    },
-    {
-      "pieceId": null,
-      "utilisateur": "Jerem",
-      "commentaire": "Cooool",
-      "id": 23
-    },
-    {
-      "pieceId": null,
-      "utilisateur": "cloclo",
-      "commentaire": "good",
-      "id": 24
-    },
-    {
-      "pieceId": null,
-      "utilisateur": "",
-      "commentaire": "",
-      "id": 25
-    },
-    {
-      "pieceId": null,
-      "utilisateur": "VV",
-      "commentaire": "cdcfsd",
-      "id": 26
-    },
-    {
-      "pieceId": null,
-      "utilisateur": "sd",
-      "commentaire": "sds",
-      "id": 27
     }
   ]
 }

@@ -1,8 +1,8 @@
 {
-  "name": "api-http",
+  "name": "les-bonnes-pieces",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "lint": "npx eslint"
@@ -15,7 +15,6 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.23.0",
-    "@faker-js/faker": "^6.3.1",
     "eslint": "^9.23.0",
     "globals": "^16.0.0"
   }

@@ -302,6 +302,7 @@ input[type=range]:focus::-ms-fill-upper {
         position: sticky;
         border-radius: 24px;
         width: 300px;
+        min-width: 300px;
         height: fit-content;
         top: 32px;
     }
