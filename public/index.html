@@ -14,6 +14,8 @@
 	<link rel="stylesheet" href="css/popover.css">
 	<script type="module" src="index.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+	<link rel="icon" href="images/logo.png" type="image/x-icon">
+
 </head>
 
 <body>
@@ -81,17 +83,6 @@
 
 					<button class="btn-maj">Réinitialiser les filtres</button>
 				</div>
-				<!-- <form class="formulaire-avis">
-					Identifiant de la pièce :<br>
-					<input type="number" name="piece-id"><br>
-					Nom d'utilisateur :<br>
-					<input type="text" name="utilisateur"><br>
-					Avis :<br>
-					<input type="text" name="commentaire"><br>
-					<input type="number" name="note" min="0" max="5"><br>
-					<button>Envoyer</button>
-				</form> -->
-
 				<div class="containerData">
 					<h2>Données</h2>
 					<h3>Aperçu des avis</h3>
@@ -110,7 +101,25 @@
 			Hello Advices
 		</div>
 		<div id="popoverForm" popover>
-			Hello Form advice
+			<form class="formulaire-avis">
+				<!-- <label>
+					Identifiant de la pièce :<br>
+					<input type="number" name="piece-id"><br>
+				</label> -->
+				<label>
+					Nom d'utilisateur :<br>
+					<input type="text" name="utilisateur"><br>
+					Avis :<br>
+				</label>
+				<label>
+					<input type="text" name="commentaire"><br>
+				</label>
+				<label>
+					Votre note
+					<input type="number" name="note" min="0" max="5"><br>
+				</label>
+				<button>Envoyer</button>
+			</form>
 		</div>
 	</main>
 </body>

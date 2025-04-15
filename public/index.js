@@ -1,7 +1,7 @@
-import { /* ajoutListenerEnvoyerAvis,*/ afficherAvis, afficherGraphiqueAvis, afficherAvisPieceDispo } from "./js/avis.js"
+import { ajoutListenerEnvoyerAvis, afficherAvis, afficherGraphiqueAvis, afficherAvisPieceDispo } from "./js/avis.js"
 import { PORT } from "./js/port.js"
 import { showMenu, hideMenu } from "./js/menu.js"
-import { generatePieces, createResumePieces} from './js/generatePieces.js'
+import { generatePieces, createResumePieces } from './js/generatePieces.js'
 import { mettreAJour, trierOrdreCroissant, trierOrdreDecroissant, trierParRange, trierPiecesAvecDescription, trierPiecesPasAbordables } from "./js/filteringPieces.js"
 
 const boutonTrier = document.querySelector("#asc")
@@ -32,23 +32,10 @@ if (pieces === null) {
 
 generatePieces(pieces)
 
-// ajoutListenerEnvoyerAvis()
-
-// for (let i = 0; i < pieces.length; i++) {
-//     const id = pieces[i].id;
-//     const avisJSON = window.localStorage.getItem(`avis-piece-${id}`);
-//     const avis = JSON.parse(avisJSON);
-
-//     if (avis !== null) {
-//         const pieceElement = document.querySelector(`article[data-id="${id}"]`);
-//         afficherAvis(pieceElement, avis)
-//     }
-// }
-
 // Fonction pour trier les produits
 mettreAJour(boutonMettreAJour, generatePieces, pieces, boutonRange, afficherPrix)
 // Trier par range
-trierParRange(boutonRange,generatePieces, pieces, afficherPrix)
+trierParRange(boutonRange, generatePieces, pieces, afficherPrix)
 
 // Trier par ordre croissant
 trierOrdreCroissant(boutonTrier, generatePieces, pieces)
