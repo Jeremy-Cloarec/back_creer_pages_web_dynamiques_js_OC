@@ -111,7 +111,6 @@ export function ajoutListenerEnvoyerAvis() {
         }
 
         const chargeUtile = JSON.stringify(avis)
-        console.log(chargeUtile);
 
         fetch(`http://${PORT}:8080/avis`, {
             method: "POST",
