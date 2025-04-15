@@ -1,5 +1,7 @@
 import { ajoutListenerAvis, compterAvis, ajoutListenerEnvoyerAvis } from "./avis.js"
 
+const enregistrerIdAvis = ajoutListenerEnvoyerAvis()
+
 export async function generatePieces(pieces) {
     createResumePieces(pieces)
 
@@ -64,7 +66,7 @@ export async function generatePieces(pieces) {
         containerFiche.appendChild(writeAdvice)
 
         ajoutListenerAvis(showAdvices)
-        ajoutListenerEnvoyerAvis(writeAdvice)
+        enregistrerIdAvis(writeAdvice)
 
         const avisData = await compterAvis(article.id)
         const [note, nombreAvis] = avisData

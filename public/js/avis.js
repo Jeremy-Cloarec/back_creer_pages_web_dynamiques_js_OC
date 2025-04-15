@@ -96,16 +96,13 @@ export async function afficherAvis(container, avis) {
     container.appendChild(avisElement)
 }
 
-export function ajoutListenerEnvoyerAvis(button) {
-    let id
-    button.addEventListener("click", (e) => {
-        id = e.target.dataset.id
-    })
-    
+let id = null
+
+export function ajoutListenerEnvoyerAvis() {
     const formulaireAvis = document.querySelector('.formulaire-avis')
     formulaireAvis.addEventListener("submit", (e) => {
         e.preventDefault()
-        
+
         const avis = {
             pieceId: id,
             utilisateur: e.target.querySelector("[name=utilisateur]").value,
@@ -122,6 +119,11 @@ export function ajoutListenerEnvoyerAvis(button) {
             body: chargeUtile
         })
     })
+    return (button) => {
+        button.addEventListener("click", (e) => {
+            id = e.target.dataset.id
+        })
+    }
 }
 
 export async function afficherGraphiqueAvis() {
