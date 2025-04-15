@@ -8,11 +8,13 @@ export function ajoutListenerAvis(button) {
         const headerPopover = document.createElement("div")
         const h3 = document.createElement("h3")
         const img = document.createElement("img")
+        const containerCloseButton = document.createElement("div")
         const close = document.createElement("button")
+
         close.textContent = "Fermer\u00A0❌"
         close.setAttribute("popovertarget", "popoverAdvice")
         close.setAttribute("popovertargetaction", "close")
-        containerAdvice.appendChild(h3)
+
         const id = event.target.dataset.id
 
         const reponseImgPiece = await fetch(`http://${PORT}:8080/pieces/${id}`)
@@ -23,17 +25,15 @@ export function ajoutListenerAvis(button) {
         h3.textContent = imgPiece.nom
 
         headerPopover.classList.add("headerPopover")
-
+        containerCloseButton.appendChild(close)
+        containerAdvice.appendChild(h3)
         headerPopover.appendChild(img)
         headerPopover.appendChild(h3)
-        headerPopover.appendChild(close)
+        headerPopover.appendChild(containerCloseButton)
         containerAdvice.appendChild(headerPopover)
-
 
         const reponse = await fetch(`http://${PORT}:8080/pieces/${id}/avis`)
         const avis = await reponse.json()
-            ;
-
 
         afficherAvis(containerAdvice, avis)
     })
@@ -48,6 +48,7 @@ export async function compterAvis(id) {
 
 export async function afficherAvis(container, avis) {
     const avisElement = document.createElement("div")
+    avisElement.classList.add("contentPopover")
 
     for (let i = 0; i < avis.length; i++) {
         let note = avis[i].nbEtoiles
