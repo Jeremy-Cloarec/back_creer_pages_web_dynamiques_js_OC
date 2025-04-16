@@ -127,7 +127,7 @@ export function ajoutListenerEnvoyerAvis() {
                 throw new Error("Erreur lors de l’envoi de l’avis")
             }
 
-            const popover = document.querySelector("#popoverForm")
+        
             const nbreAvis = await compterAvis(id)
             const newAdvice = document.querySelector(".nbreAvis")
             newAdvice.textContent = `${nbreAvis[1]} avis`
@@ -136,8 +136,6 @@ export function ajoutListenerEnvoyerAvis() {
             afficherMessageSucces(successMessage)
 
             formulaireAvis.reset()
-            popover.hidePopover()
-
         } catch (error) {
             console.error("Une erreur est survenue : " + error.message)
             afficherMessageErreur(error.message)
