@@ -102,25 +102,24 @@
 		</div>
 		<div id="popoverForm" popover>
 			<form class="formulaire-avis">
-				<!-- <label>
-					Identifiant de la pièce :<br>
-					<input type="number" name="piece-id"><br>
-				</label> -->
 				<label>
 					Nom d'utilisateur :<br>
 					<input type="text" name="utilisateur"><br>
-					Avis :<br>
+					Avis :
 				</label>
 				<label>
-					<input type="text" name="commentaire"><br>
+					Votre message *
+					<textarea type="text" name="commentaire"></textarea>
 				</label>
 				<label>
 					Votre note
-					<input type="number" name="note" min="0" max="5"><br>
+					<input type="number" name="note" min="0" max="5">
 				</label>
 				<button>Envoyer</button>
 			</form>
+			<div class="errorMessage"></div>
 		</div>
+		<div class="success">Votre message a bien été envoyé !</div>
 	</main>
 </body>
 

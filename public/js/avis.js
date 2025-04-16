@@ -97,33 +97,125 @@ export async function afficherAvis(container, avis) {
     container.appendChild(avisElement)
 }
 
-let id = null
-
 export function ajoutListenerEnvoyerAvis() {
+    let id = null
     const formulaireAvis = document.querySelector('.formulaire-avis')
-    formulaireAvis.addEventListener("submit", (e) => {
+
+    formulaireAvis.addEventListener("submit", async (e) => {
         e.preventDefault()
+        try {
+            const nomOK = validerNom(e.target.querySelector("[name=utilisateur]").value)
+            const messageOK = validerTextarea(e.target.querySelector("[name=commentaire]").value)
+            const noteOK = validerNote(e.target.querySelector("[name=note]").value)
 
-        const avis = {
-            pieceId: id,
-            utilisateur: e.target.querySelector("[name=utilisateur]").value,
-            commentaire: e.target.querySelector("[name=commentaire]").value,
-            nbEtoiles: parseInt(e.target.querySelector("[name=note]").value)
+            const avis = {
+                pieceId: id,
+                utilisateur: nomOK,
+                commentaire: messageOK,
+                nbEtoiles: noteOK
+            }
+
+            const chargeUtile = JSON.stringify(avis)
+
+            const response = await fetch(`${baseURL}/avis`,  {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: chargeUtile
+            })
+
+            if (!response.ok) {
+                throw new Error("Erreur lors de l’envoi de l’avis")
+            }
+
+            const popover = document.querySelector("#popoverForm")
+            const nbreAvis = await compterAvis(id)
+            const newAdvice = document.querySelector(".nbreAvis")
+            newAdvice.textContent =`${nbreAvis[1]} avis`
+            const successMessage = document.querySelector(".success")
+            successMessage.classList.add("show")
+            afficherMessageSucces(successMessage)
+
+            formulaireAvis.reset()
+            popover.hidePopover()
+
+        } catch (error) {
+            console.error("Une erreur est survenue : " + error.message)
+            afficherMessageErreur(error.message)
         }
-
-        const chargeUtile = JSON.stringify(avis)
-
-        fetch(`${baseURL}/avis`, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: chargeUtile
-        })
     })
+
     return (button) => {
         button.addEventListener("click", (e) => {
             id = e.target.dataset.id
         })
     }
+}
+
+function validerNom(nom) {
+    if (nom.length < 2) {
+        throw new Error(`Le champ nom doit contenir au moins deux lettres`)
+    }
+
+    if (nom.trim() === "") {
+        throw new Error(`Le champ nom ne doit pas être vide`)
+    }
+
+    if (!/^[a-zA-ZÀ-ÿ\- ]+$/.test(nom)) {
+        throw new Error(`Le champ nom ne doit pas contenir de caractères spéciaux`);
+    }
+
+    nom = nom.trim()
+
+    return nom
+}
+
+function validerTextarea(contenu) {
+    if (contenu.trim() === "") {
+        throw new Error("Le champ message ne doit pas être vide")
+    }
+
+    if (contenu.trim().length < 2) {
+        throw new Error("Le champ message doit contenir minimum 2 caractères");
+    }
+
+    if (contenu.trim().length > 300) {
+        throw new Error("Le champ message doit contenir maximum 300 caractères");
+    }
+
+    if (!/^[a-zA-ZÀ-ÿ0-9\s.,;:'"!?()\-]+$/.test(contenu)) {
+        throw new Error("Le champ message contient des caractères non autorisés");
+    }
+
+    return contenu;
+}
+
+function validerNote(note) {
+    if (note === "" || note === null || note === undefined) {
+        throw new Error("Le champ note ne doit pas être vide")
+    }
+
+    const valeur = Number(note)
+
+    if (isNaN(valeur)) {
+        throw new Error("La valeur doit être un nombre");
+    }
+
+    if (valeur < 0 || valeur > 5) {
+        throw new Error("La valeur doit être comprise entre 0 et 5")
+    }
+
+    return parseInt(note)
+}
+
+function afficherMessageErreur(messageErr) {
+    let messageErreur = document.querySelector(".errorMessage")
+    messageErreur.textContent = messageErr
+}
+
+function afficherMessageSucces (element) {
+    setTimeout(() => {
+        element.classList.remove("show")
+    }, 3000);
 }
 
 export async function afficherGraphiqueAvis() {

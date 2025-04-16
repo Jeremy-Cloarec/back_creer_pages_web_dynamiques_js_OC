@@ -66,3 +66,24 @@
     width: 20px;
     height: auto;
 }
+
+.success {
+    background:rgb(213, 235, 213);
+    color: rgb(31, 72, 31);
+    width: fit-content;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 4px 12px;
+    border-radius: 6px;
+    transition: all 0.3s ease-in-out;
+    z-index: 3;
+    display: none;
+}
+
+.success.show {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
