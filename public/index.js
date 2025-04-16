@@ -1,5 +1,5 @@
 import { ajoutListenerEnvoyerAvis, afficherAvis, afficherGraphiqueAvis, afficherAvisPieceDispo } from "./js/avis.js"
-import { PORT } from "./js/port.js"
+import { baseURL } from "./js/baseURL.js"
 import { showMenu, hideMenu } from "./js/menu.js"
 import { generatePieces, createResumePieces } from './js/generatePieces.js'
 import { mettreAJour, trierOrdreCroissant, trierOrdreDecroissant, trierParRange, trierPiecesAvecDescription, trierPiecesPasAbordables } from "./js/filteringPieces.js"
@@ -22,7 +22,7 @@ hideMenu(hideMenuButton)
 hideMenu(filtreContainer)
 
 if (pieces === null) {
-    const reponse = await fetch(`http://${PORT}:8080/pieces`)
+    const reponse = await fetch(`${baseURL}/pieces`)
     pieces = await reponse.json()
     const valeurPieces = JSON.stringify(pieces)
     window.localStorage.setItem("pieces", valeurPieces)

@@ -1,4 +1,5 @@
-import { PORT } from "./port.js"
+import { baseURL } from "./baseURL.js"
+console.log(baseURL);
 
 export function ajoutListenerAvis(button) {
 
@@ -17,7 +18,7 @@ export function ajoutListenerAvis(button) {
 
         const id = event.target.dataset.id
 
-        const reponseImgPiece = await fetch(`http://${PORT}:8080/pieces/${id}`)
+        const reponseImgPiece = await fetch(`${baseURL}/pieces/${id}`)
         const imgPiece = await reponseImgPiece.json()
 
         img.src = imgPiece.image
@@ -32,7 +33,7 @@ export function ajoutListenerAvis(button) {
         headerPopover.appendChild(containerCloseButton)
         containerAdvice.appendChild(headerPopover)
 
-        const reponse = await fetch(`http://${PORT}:8080/pieces/${id}/avis`)
+        const reponse = await fetch(`${baseURL}/pieces/${id}/avis`)
         const avis = await reponse.json()
 
         afficherAvis(containerAdvice, avis)
@@ -40,7 +41,7 @@ export function ajoutListenerAvis(button) {
 }
 
 export async function compterAvis(id) {
-    const reponse = await fetch(`http://${PORT}:8080/pieces/${id}/avis`)
+    const reponse = await fetch(`${baseURL}/pieces/${id}/avis`)
     const avis = await reponse.json()
     const moyenneEtoiles = await avis.map(avis => avis.nbEtoiles).reduce((a, b) => a + b) / avis.length
     return [moyenneEtoiles, avis.length]
@@ -112,7 +113,7 @@ export function ajoutListenerEnvoyerAvis() {
 
         const chargeUtile = JSON.stringify(avis)
 
-        fetch(`http://${PORT}:8080/avis`, {
+        fetch(`${baseURL}/avis`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: chargeUtile
@@ -127,7 +128,7 @@ export function ajoutListenerEnvoyerAvis() {
 
 export async function afficherGraphiqueAvis() {
     // Calcul du nombre total de commentaires par quantité d'étoiles attribuées
-    const avis = await fetch(`http://${PORT}:8080/avis`).then(avis => avis.json());
+    const avis = await fetch(`${baseURL}/avis`).then(avis => avis.json());
     const nb_commentaires = [0, 0, 0, 0, 0];
     for (let commentaire of avis) {
         nb_commentaires[commentaire.nbEtoiles - 1]++;
@@ -201,7 +202,7 @@ async function calculerNombrePiece(arr) {
         let id = arr[i].id
 
         try {
-            const piece = await fetch(`http://${PORT}:8080/pieces/${id}/avis`).then(avis => avis.json())
+            const piece = await fetch(`${baseURL}/pieces/${id}/avis`).then(avis => avis.json())
             piecesNumber += piece.length
 
         } catch (error) {
