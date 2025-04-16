@@ -1,0 +1,25 @@
+footer {
+    background-color: var(--brown-light);
+    padding: 50px 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 32px;
+}
+footer a {
+    padding: 4px;
+    transition: all 0.3s;
+    border-radius: 6px;
+
+}
+
+footer a:hover {
+    background-color: var(--brown-light2);
+}
+
+@media ( min-width: 1024px) {
+	footer {
+		padding: 32px;
+	}
+}
