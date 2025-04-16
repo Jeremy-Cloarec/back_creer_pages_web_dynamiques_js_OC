@@ -101,23 +101,24 @@
 			Hello Advices
 		</div>
 		<div id="popoverForm" popover>
+			<div class="headerPopover"></div>
 			<form class="formulaire-avis">
 				<label>
-					Nom d'utilisateur :<br>
-					<input type="text" name="utilisateur"><br>
-					Avis :
+					Nom d'utilisateur * :
+					<input type="text" name="utilisateur" placeholder="Votre nom">
 				</label>
 				<label>
-					Votre message *
-					<textarea type="text" name="commentaire"></textarea>
+					Votre message * :
+					<textarea type="text" name="commentaire" placeholder="Ecrivez votre message"></textarea>
 				</label>
 				<label>
-					Votre note
-					<input type="number" name="note" min="0" max="5">
+					Votre note * :
+					<input type="number" name="note" min="0" max="5" placeholder="Votre note de 0 à 5">
 				</label>
-				<button>Envoyer</button>
+				<div class="errorMessage"></div>
+				<button class="envoieMessage">Envoyer</button>
 			</form>
-			<div class="errorMessage"></div>
+			
 		</div>
 		<div class="success">Votre message a bien été envoyé !</div>
 	</main>

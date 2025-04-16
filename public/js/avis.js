@@ -117,7 +117,7 @@ export function ajoutListenerEnvoyerAvis() {
 
             const chargeUtile = JSON.stringify(avis)
 
-            const response = await fetch(`${baseURL}/avis`,  {
+            const response = await fetch(`${baseURL}/avis`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: chargeUtile
@@ -130,7 +130,7 @@ export function ajoutListenerEnvoyerAvis() {
             const popover = document.querySelector("#popoverForm")
             const nbreAvis = await compterAvis(id)
             const newAdvice = document.querySelector(".nbreAvis")
-            newAdvice.textContent =`${nbreAvis[1]} avis`
+            newAdvice.textContent = `${nbreAvis[1]} avis`
             const successMessage = document.querySelector(".success")
             successMessage.classList.add("show")
             afficherMessageSucces(successMessage)
@@ -145,8 +145,31 @@ export function ajoutListenerEnvoyerAvis() {
     })
 
     return (button) => {
-        button.addEventListener("click", (e) => {
+        button.addEventListener("click",async (e) => {
             id = e.target.dataset.id
+
+            const headerPopover = document.querySelector(".headerPopover")
+            headerPopover.innerHTML = ""
+            const h3 = document.createElement("h3")
+            const img = document.createElement("img")
+            const containerCloseButton = document.createElement("div")
+            const close = document.createElement("button")
+
+            close.textContent = "Fermer\u00A0❌"
+            close.setAttribute("popovertarget", "popoverForm")
+            close.setAttribute("popovertargetaction", "close")
+
+            const reponseImgPiece = await fetch(`${baseURL}/pieces/${id}`)
+            const imgPiece =  await reponseImgPiece.json()
+
+            img.src = imgPiece.image
+            img.alt = "Photographie d'une " + imgPiece.nom
+            h3.textContent = imgPiece.nom
+
+            containerCloseButton.appendChild(close)
+            headerPopover.appendChild(img)
+            headerPopover.appendChild(h3)
+            headerPopover.appendChild(containerCloseButton)
         })
     }
 }
@@ -212,7 +235,7 @@ function afficherMessageErreur(messageErr) {
     messageErreur.textContent = messageErr
 }
 
-function afficherMessageSucces (element) {
+function afficherMessageSucces(element) {
     setTimeout(() => {
         element.classList.remove("show")
     }, 3000);
