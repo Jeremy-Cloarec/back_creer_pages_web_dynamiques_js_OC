@@ -1,0 +1,189 @@
+{
+    "pieces": [
+        {
+            "id": 1,
+            "nom": "Ampoule LED",
+            "prix": 60,
+            "categorie": "Optiques",
+            "image": "images/ampoule-led.png",
+            "description": "Distance d’éclairage : 100 mètres !",
+            "disponibilite": true
+        },
+        {
+            "id": 2,
+            "nom": "Plaquettes de frein (x4)",
+            "prix": 40,
+            "categorie": "Freinage",
+            "image": "images/plaquettes-frein.png",
+            "description": "Une qualité de freinage optimale, par tous les temps",
+            "disponibilite": true
+        },
+        {
+            "id": 3,
+            "nom": "Ampoule boîte à gants",
+            "prix": 5.49,
+            "categorie": "Optiques",
+            "image": "images/ampoule-boite-a-gants.png",
+            "description": "Pour y voir clair dans l’habitacle",
+            "disponibilite": false
+        },
+        {
+            "id": 4,
+            "nom": "Liquide de frein",
+            "prix": 9.6,
+            "categorie": "Freinage",
+            "image": "images/liquide-frein.png",
+            "disponibilite": true
+        },
+        {
+            "id": 5,
+            "nom": "Balai d'essuie-glace",
+            "prix": 29.1,
+            "image": "images/balai-essuie-glace.png",
+            "description": "Performances d’essuyage au Top ! Longueur : 550 mm",
+            "disponibilite": true
+        }
+    ],
+    "avis": [
+        {
+            "id": 1,
+            "pieceId": 1,
+            "utilisateur": "Kristen Larson",
+            "commentaire": "Éclaire super bien la route, je vois enfin clairement la nuit.",
+            "nbEtoiles": 4
+        },
+        {
+            "id": 2,
+            "pieceId": 2,
+            "utilisateur": "Alberto Kessler",
+            "commentaire": "Freinage très efficace, je me sens en sécurité même sous la pluie.",
+            "nbEtoiles": 4
+        },
+        {
+            "id": 3,
+            "pieceId": 3,
+            "utilisateur": "Shane Powlowski",
+            "commentaire": "Petite ampoule pratique, dommage qu'elle ne soit pas toujours en stock.",
+            "nbEtoiles": 3
+        },
+        {
+            "id": 4,
+            "pieceId": 4,
+            "utilisateur": "Grace Effertz",
+            "commentaire": "Fait le travail, mais la bouteille est un peu petite.",
+            "nbEtoiles": 2
+        },
+        {
+            "id": 5,
+            "pieceId": 5,
+            "utilisateur": "Blanche Hane",
+            "commentaire": "Essuie bien mais fait un peu de bruit après quelques semaines.",
+            "nbEtoiles": 3
+        },
+        {
+            "id": 6,
+            "pieceId": 1,
+            "utilisateur": "Catherine Kihn",
+            "commentaire": "Bonne luminosité, facile à installer.",
+            "nbEtoiles": 4
+        },
+        {
+            "id": 7,
+            "pieceId": 2,
+            "utilisateur": "Jimmie Pfannerstill",
+            "commentaire": "Très bonne tenue de route après remplacement. Parfait !",
+            "nbEtoiles": 5
+        },
+        {
+            "id": 8,
+            "pieceId": 3,
+            "utilisateur": "Ms. Lydia Grady",
+            "commentaire": "Éclaire bien le compartiment, pratique pour trouver ses affaires.",
+            "nbEtoiles": 4
+        },
+        {
+            "id": 9,
+            "pieceId": 4,
+            "utilisateur": "Cynthia Leuschke",
+            "commentaire": "Compatible avec ma voiture, simple à verser, bon prix.",
+            "nbEtoiles": 5
+        },
+        {
+            "id": 10,
+            "pieceId": 5,
+            "utilisateur": "Fannie Osinski DVM",
+            "commentaire": "Très efficace sous la pluie, visibilité au top.",
+            "nbEtoiles": 5
+        },
+        {
+            "id": 11,
+            "pieceId": 1,
+            "utilisateur": "Melinda Bergstrom",
+            "commentaire": "Changement radical de visibilité, j’adore.",
+            "nbEtoiles": 5
+        },
+        {
+            "id": 12,
+            "pieceId": 2,
+            "utilisateur": "Glen Bauch DVM",
+            "commentaire": "Montage facile, qualité correcte.",
+            "nbEtoiles": 4
+        },
+        {
+            "id": 13,
+            "pieceId": 3,
+            "utilisateur": "Melanie Fadel",
+            "commentaire": "Ampoule discrète mais bien utile, bon rapport qualité/prix.",
+            "nbEtoiles": 5
+        },
+        {
+            "id": 14,
+            "pieceId": 4,
+            "utilisateur": "Amy Ernser",
+            "commentaire": "Liquide trop liquide ? La pédale me semble spongieuse.",
+            "nbEtoiles": 1
+        },
+        {
+            "id": 15,
+            "pieceId": 5,
+            "utilisateur": "Toby Russel",
+            "commentaire": "Essuie correctement mais usure un peu rapide.",
+            "nbEtoiles": 3
+        },
+        {
+            "id": 16,
+            "pieceId": 1,
+            "utilisateur": "Frankie Ritchie",
+            "commentaire": "Je recommande, très bon éclairage et faible consommation.",
+            "nbEtoiles": 5
+        },
+        {
+            "id": 17,
+            "pieceId": 2,
+            "utilisateur": "Priscilla Sporer",
+            "commentaire": "Conforme à la description, bonne adhérence.",
+            "nbEtoiles": 5
+        },
+        {
+            "id": 18,
+            "pieceId": 3,
+            "utilisateur": "Adrian Cassin",
+            "commentaire": "Éclairage suffisant pour une petite zone, fait le job.",
+            "nbEtoiles": 4
+        },
+        {
+            "id": 19,
+            "pieceId": 4,
+            "utilisateur": "Nicolas Lesch",
+            "commentaire": "Très bon liquide, pas de souci depuis la purge.",
+            "nbEtoiles": 5
+        },
+        {
+            "id": 20,
+            "pieceId": 5,
+            "utilisateur": "Hugo Block",
+            "commentaire": "Parfait même sous forte pluie, je recommande.",
+            "nbEtoiles": 5
+        }
+    ]
+}
