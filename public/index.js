@@ -1,8 +1,9 @@
-import {  afficherGraphiqueAvis, afficherAvisPieceDispo } from "./js/chartGraphic.js"
+import { afficherGraphiqueAvis, afficherAvisPieceDispo } from "./js/chartGraphic.js"
 import { baseURL } from "./js/baseURL.js"
 import { showMenu, hideMenu } from "./js/menu.js"
-import { generatePieces, createResumePieces } from './js/generatePieces.js'
+import { generatePieces } from './js/generatePieces.js'
 import { mettreAJour, trierOrdreCroissant, trierOrdreDecroissant, trierParRange, trierPiecesAvecDescription, trierPiecesPasAbordables } from "./js/filteringPieces.js"
+import { sendAdvice } from "./js/sendAdvice.js"
 
 const boutonTrier = document.querySelector("#asc")
 const boutonTrierDecroissant = document.querySelector("#desc")
@@ -20,6 +21,8 @@ const filtreContainer = document.querySelector(".filtres")
 showMenu(showMenuButton)
 hideMenu(hideMenuButton)
 hideMenu(filtreContainer)
+
+sendAdvice()
 
 if (pieces === null) {
     const reponse = await fetch(`${baseURL}/pieces`)

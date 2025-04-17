@@ -1,6 +1,6 @@
-import { ajoutListenerAvis, compterAvis, ajoutListenerEnvoyerAvis } from "./avis.js"
-
-const enregistrerIdAvis = ajoutListenerEnvoyerAvis()
+import { ajoutListenerAvis } from "./showAdvice.js"
+import { ajoutListenerEnvoyerAvis } from "./sendAdvice.js"
+import { compterAvis } from "./countAdvice.js"
 
 export async function generatePieces(pieces) {
     createResumePieces(pieces)
@@ -56,17 +56,17 @@ export async function generatePieces(pieces) {
         showAdvices.setAttribute("popovertarget", "popoverAdvice")
         showAdvices.setAttribute("popovertargetaction", "show")
         containerFiche.appendChild(showAdvices)
-        
+
         const writeAdvice = document.createElement("button")
         writeAdvice.dataset.id = article.id
-        writeAdvice.textContent =  "Ecrire un avis"
+        writeAdvice.textContent = "Ecrire un avis"
         writeAdvice.classList.add("writeAdvice")
-        writeAdvice.setAttribute("popovertarget", "popoverForm")
-        writeAdvice.setAttribute("popovertargetaction", "show")
+        // writeAdvice.setAttribute("popovertarget", "popoverForm")
+        // writeAdvice.setAttribute("popovertargetaction", "show")
         containerFiche.appendChild(writeAdvice)
 
         ajoutListenerAvis(showAdvices)
-        enregistrerIdAvis(writeAdvice)
+        ajoutListenerEnvoyerAvis(writeAdvice)
 
         const avisData = await compterAvis(article.id)
         const [note, nombreAvis] = avisData
