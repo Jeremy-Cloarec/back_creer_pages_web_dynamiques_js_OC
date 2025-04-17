@@ -16,7 +16,9 @@ const boutonMettreAJour = document.querySelector(".btn-maj")
 const showMenuButton = document.querySelector(".menu")
 const hideMenuButton = document.querySelector(".btn-fermer")
 const filtreContainer = document.querySelector(".filtres")
-
+const date = new Date()
+const dateFooter = document.querySelector("footer span")
+dateFooter.textContent = date.getFullYear()
 
 showMenu(showMenuButton)
 hideMenu(hideMenuButton)

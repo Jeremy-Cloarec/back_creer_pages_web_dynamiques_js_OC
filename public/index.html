@@ -36,7 +36,7 @@
 <body>
 	<nav>
 		<img src="images/logo.png" alt="logo" width="90" height="58">
-		<a href="tel:+33358501447"  class="contact-nav">
+		<a href="tel:+33358501447" class="contact-nav">
 			<span>
 				<img src="images/tel.png" alt="icone tel" width="18" height="auto">
 			</span>
@@ -99,10 +99,10 @@
 					<button class="btn-maj">Réinitialiser les filtres</button>
 				</div>
 				<div class="containerData">
-					<h2>Données</h2>
-					<h3>Aperçu des avis</h3>
+					<h2>Graphiques</h2>
+					<h3>Avis par notes</h3>
 					<canvas id="graphique-avis" width="300" height="300"></canvas>
-					<h3>Aperçu des avis par pièces disponibles</h3>
+					<h3>Avis par disponibilité</h3>
 					<canvas id="graphique-piece-dispo" width="300" height="300"></canvas>
 				</div>
 
@@ -115,7 +115,15 @@
 		<div id="popoverAdvice" popover>
 		</div>
 		<div id="popoverForm" popover>
-			<div class="headerPopover"></div>
+			<div class="headerPopover">
+				<img src="images/ampoule-led.webp" alt="Photographie d'une Ampoule LED">
+				<h3>Ampoule LED</h3>
+				<div>
+					<button popovertarget="popoverForm" popovertargetaction="close">
+						Fermer&nbsp;❌
+					</button>
+				</div>
+			</div>
 			<form class="formulaire-avis">
 				<label>
 					Nom d'utilisateur * :
@@ -137,7 +145,7 @@
 		<div class="success">Votre message a bien été envoyé !</div>
 	</main>
 	<footer>
-		<span>2025</span>-<a href="https://github.com/Jeremy-Cloarec" target="_blank">Jérémy &#8599; </a>
+		<span>2025</span>-<a href="https://github.com/Jeremy-Cloarec" target="_blank">Jérémy <img src="./images/externalLink.png"></a>
 	</footer>
 </body>
 

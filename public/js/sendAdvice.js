@@ -9,32 +9,19 @@ export function ajoutListenerEnvoyerAvis(button) {
         const errorMessage = document.querySelector(".errorMessage")
         errorMessage.textContent = ""
         const popover = document.querySelector("#popoverForm")
-        popover.showPopover()
 
-        const headerPopover = document.querySelector(".headerPopover")
-        headerPopover.innerHTML = ""
         const envoyerMessage = document.querySelector(".envoieMessage")
         envoyerMessage.dataset.id = id
-        const h3 = document.createElement("h3")
-        const img = document.createElement("img")
-        const containerCloseButton = document.createElement("div")
-        const close = document.createElement("button")
-        close.textContent = "Fermer\u00A0❌"
-        close.setAttribute("popovertarget", "popoverForm")
-        close.setAttribute("popovertargetaction", "close")
-
+        const h3 = document.querySelector(".headerPopover h3")
+        const img = document.querySelector(".headerPopover img")
         const reponseImgPiece = await fetch(`${baseURL}/pieces/${id}`)
         const imgPiece = await reponseImgPiece.json()
+
         img.src = imgPiece.image
         img.alt = "Photographie d'une " + imgPiece.nom
         h3.textContent = imgPiece.nom
 
-        containerCloseButton.appendChild(close)
-        headerPopover.appendChild(img)
-        headerPopover.appendChild(h3)
-        headerPopover.appendChild(containerCloseButton)
-
-       
+        popover.showPopover()
     })
 }
 

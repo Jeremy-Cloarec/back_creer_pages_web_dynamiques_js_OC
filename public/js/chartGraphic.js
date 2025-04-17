@@ -43,7 +43,7 @@ export async function afficherAvisPieceDispo(pieces) {
     const nombreAvisPieceDispo = await calculerNombrePiece(pieceDisponibles)
     const nombreAvisPieceIndispo = await calculerNombrePiece(pieceIndisponibles)
 
-    const labels = ["Nomb", "Nomb"]
+    const labels = ["Disponibles", "Indisponibles"]
 
     const arrayData = [nombreAvisPieceDispo, nombreAvisPieceIndispo]
 
