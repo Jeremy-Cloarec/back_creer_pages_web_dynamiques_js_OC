@@ -1,4 +1,4 @@
-import { ajoutListenerEnvoyerAvis, afficherAvis, afficherGraphiqueAvis, afficherAvisPieceDispo } from "./js/avis.js"
+import {  afficherGraphiqueAvis, afficherAvisPieceDispo } from "./js/chartGraphic.js"
 import { baseURL } from "./js/baseURL.js"
 import { showMenu, hideMenu } from "./js/menu.js"
 import { generatePieces, createResumePieces } from './js/generatePieces.js'
