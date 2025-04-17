@@ -7,8 +7,10 @@ export async function generatePieces(pieces) {
 
     for (let i = 0; i < pieces.length; i++) {
         const article = pieces[i]
+        
         const imageElement = document.createElement("img")
         imageElement.src = article.image
+        imageElement.alt = `Photo de : ${article.nom}`
         imageElement.setAttribute("width", "250")
         imageElement.setAttribute("height", "auto")
         const nomElement = document.createElement("h2")

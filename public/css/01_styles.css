@@ -40,7 +40,8 @@ main {
 	gap: 32px;
 	max-width: 1400px;
 	margin: auto;
-
+	width: 100%;
+	min-height: 100vh;
 }
 
 @media ( min-width: 1024px) {
