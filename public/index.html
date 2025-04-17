@@ -5,18 +5,22 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Les Bonnes Pièces</title>
-	<link rel="stylesheet" href="styles.css">
-	<link rel="stylesheet" href="css/nav.css">
-	<link rel="stylesheet" href="css/header.css">
-	<link rel="stylesheet" href="css/filtres.css">
-	<link rel="stylesheet" href="css/pieces.css">
-	<link rel="stylesheet" href="css/button.css">
-	<link rel="stylesheet" href="css/popover.css">
-	<link rel="stylesheet" href="css/footer.css">
-	<script type="module" src="index.js"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Seymour+One&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="./dist/styles.min.css">
+	<script type="module" src="./js/index.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
 	<link rel="icon" href="images/logo.png" type="image/x-icon">
-
+	<link rel="preload" fetchpriority="high" as="image" href="./images/filtre.png">
+	<link rel="preload" fetchpriority="high" as="image" href="./images/garage.webp">
+	<link rel="preload" fetchpriority="high" as="image" href="./images/ampoule-boite-a-gants.png">
+	<link rel="preload" fetchpriority="high" as="image" href="./images/ampoule-led.png">
+	<link rel="preload" fetchpriority="high" as="image" href="./images/balai-essuie-glace.png">
+	<link rel="preload" fetchpriority="high" as="image" href="./images/liquide-frein.png">
+	<link rel="preload" fetchpriority="high" as="image" href="./images/plaquettes-frein.png">
 </head>
 
 <body>
@@ -36,8 +40,8 @@
 		<!-- Filtres de recherche -->
 		<div class="containerButton">
 			<button class="menu">
-				<image src="images/filtre.png" alt="icone filtre" width="16" height="auto">
-					Afficher les filtres
+				<img src="images/filtre.png" alt="icone filtre" width="16" height="auto">
+				Afficher les filtres
 			</button>
 		</div>
 		<aside class="filtres">
@@ -118,12 +122,12 @@
 				<div class="errorMessage"></div>
 				<button class="envoieMessage">Envoyer</button>
 			</form>
-			
+
 		</div>
 		<div class="success">Votre message a bien été envoyé !</div>
 	</main>
 	<footer>
-		<span>2025</span>-<a href="https://github.com/Jeremy-Cloarec" target="_blank">Jérémy &#8599; </a> 
+		<span>2025</span>-<a href="https://github.com/Jeremy-Cloarec" target="_blank">Jérémy &#8599; </a>
 	</footer>
 </body>
 

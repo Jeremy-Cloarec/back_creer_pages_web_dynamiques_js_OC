@@ -1,9 +1,9 @@
-import { afficherGraphiqueAvis, afficherAvisPieceDispo } from "./js/chartGraphic.js"
-import { baseURL } from "./js/baseURL.js"
-import { showMenu, hideMenu } from "./js/menu.js"
-import { generatePieces } from './js/generatePieces.js'
-import { mettreAJour, trierOrdreCroissant, trierOrdreDecroissant, trierParRange, trierPiecesAvecDescription, trierPiecesPasAbordables } from "./js/filteringPieces.js"
-import { sendAdvice } from "./js/sendAdvice.js"
+import { afficherGraphiqueAvis, afficherAvisPieceDispo } from "./chartGraphic.js"
+import { baseURL } from "./baseURL.js"
+import { showMenu, hideMenu } from "./menu.js"
+import { generatePieces } from './generatePieces.js'
+import { mettreAJour, trierOrdreCroissant, trierOrdreDecroissant, trierParRange, trierPiecesAvecDescription, trierPiecesPasAbordables } from "./filteringPieces.js"
+import { sendAdvice } from "./sendAdvice.js"
 
 const boutonTrier = document.querySelector("#asc")
 const boutonTrierDecroissant = document.querySelector("#desc")

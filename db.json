@@ -5,7 +5,7 @@
       "nom": "Ampoule LED",
       "prix": 60,
       "categorie": "Optiques",
-      "image": "images/ampoule-led.png",
+      "image": "images/ampoule-led.webp",
       "description": "Distance d’éclairage : 100 mètres !",
       "disponibilite": true
     },
@@ -14,7 +14,7 @@
       "nom": "Plaquettes de frein (x4)",
       "prix": 40,
       "categorie": "Freinage",
-      "image": "images/plaquettes-frein.png",
+      "image": "images/plaquettes-frein.webp",
       "description": "Une qualité de freinage optimale, par tous les temps",
       "disponibilite": true
     },
@@ -23,7 +23,7 @@
       "nom": "Ampoule boîte à gants",
       "prix": 5.49,
       "categorie": "Optiques",
-      "image": "images/ampoule-boite-a-gants.png",
+      "image": "images/ampoule-boite-a-gants.webp",
       "description": "Pour y voir clair dans l’habitacle",
       "disponibilite": false
     },
@@ -32,14 +32,14 @@
       "nom": "Liquide de frein",
       "prix": 9.6,
       "categorie": "Freinage",
-      "image": "images/liquide-frein.png",
+      "image": "images/liquide-frein.webp",
       "disponibilite": true
     },
     {
       "id": 5,
       "nom": "Balai d'essuie-glace",
       "prix": 29.1,
-      "image": "images/balai-essuie-glace.png",
+      "image": "images/balai-essuie-glace.webp",
       "description": "Performances d’essuyage au Top ! Longueur : 550 mm",
       "disponibilite": true
     }
@@ -184,6 +184,20 @@
       "utilisateur": "Hugo Block",
       "commentaire": "Parfait même sous forte pluie, je recommande.",
       "nbEtoiles": 5
+    },
+    {
+      "pieceId": "1",
+      "utilisateur": "Toto",
+      "commentaire": "Ah ouais vraiment cool",
+      "nbEtoiles": 5,
+      "id": 21
+    },
+    {
+      "pieceId": "3",
+      "utilisateur": "Le garagiste",
+      "commentaire": "L'ampoule a grillé !!!",
+      "nbEtoiles": 2,
+      "id": 22
     }
   ]
 }

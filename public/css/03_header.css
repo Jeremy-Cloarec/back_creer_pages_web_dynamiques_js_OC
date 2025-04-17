@@ -1,5 +1,5 @@
 header {
-    position: relative;
+    /* position: relative;
     display: flex;
     padding:  0 16px;
     align-items: center;
@@ -12,10 +12,11 @@ header {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    filter: grayscale(60%);
+    filter: grayscale(60%); */
+    width: 100%;
 }
 
-header::before {
+/* header::before {
     content: "";
     position: absolute;
     top: 0;
@@ -24,7 +25,7 @@ header::before {
     height: 100%;
     background: #ffc57865;
     z-index: 0;
-}
+} */
 
 header * {
     position: relative;

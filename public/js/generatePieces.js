@@ -9,6 +9,8 @@ export async function generatePieces(pieces) {
         const article = pieces[i]
         const imageElement = document.createElement("img")
         imageElement.src = article.image
+        imageElement.setAttribute("width", "250")
+        imageElement.setAttribute("height", "auto")
         const nomElement = document.createElement("h2")
         nomElement.innerText = article.nom
         const containerPrix = document.createElement("div")
