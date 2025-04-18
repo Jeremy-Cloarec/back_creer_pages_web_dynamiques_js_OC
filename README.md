@@ -1,4 +1,4 @@
-# Les Bonnes Pièces
+# Les bonnes pièces
 
 Projet basé sur un cours d' [OpenClassrooms](https://openclassrooms.com/fr/courses/7697016-creez-des-pages-web-dynamiques-avec-javascript) , forké et entièrement personnalisé.
 
@@ -21,7 +21,7 @@ Projet basé sur un cours d' [OpenClassrooms](https://openclassrooms.com/fr/cour
 ## Démarrage rapide
 
 ```bash
-npm insall    # Installe les dépendances
+npm install    # Installe les dépendances
 npm start   # Lance le json-server sur http://localhost:8080
 npm run pullDB  # Récupère la base de données distant
 npm run lint    # Analyse le code avec ESLint
