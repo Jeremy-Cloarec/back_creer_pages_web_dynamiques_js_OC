@@ -1,7 +1,8 @@
 header {
     position: relative;
     width: 100%;
-    margin-top: 91px;
+    padding-top: 91px;
+    background-color: var(--brown-light);
 }
 
 header * {
