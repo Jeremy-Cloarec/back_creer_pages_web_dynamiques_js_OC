@@ -44,20 +44,6 @@ main {
 	min-height: 100vh;
 }
 
-main>.containerButton {
-	container-type: scroll-state;
-	position: sticky;
-	top: 16px;
-	width: 100%;
-
-	>.menu {
-		@container scroll-state(stuck: top) {
-			width: fit-content;
-			box-shadow: var(--box-shadow);
-		}
-	}
-}
-
 h1 {
 	font-family: "Roboto Slab", serif;
 	text-transform: uppercase;
@@ -72,6 +58,18 @@ h2 {
 	font-family: "Roboto Slab", serif;
 	font-weight: 800;
 	color: var(--brown);
+}
+
+h3 {
+	font-family: "Roboto Slab", serif;
+	font-weight: 600;
+	color: var(--brown);
+}
+
+main>.containerButton {
+	position: sticky;
+	top: 16px;
+	width: 100%;
 }
 
 @media (min-width: 1024px) {
