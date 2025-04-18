@@ -12,8 +12,10 @@ export function ajoutListenerEnvoyerAvis(button) {
 
         const envoyerMessage = document.querySelector(".envoieMessage")
         envoyerMessage.dataset.id = id
-        const h3 = document.querySelector(".headerPopover h3")
-        const img = document.querySelector(".headerPopover img")
+        const headerPopover = document.querySelector(".headerPopover")
+        const h3 = headerPopover.querySelector("h3")
+        const img = headerPopover.querySelector("img")
+        
         const reponseImgPiece = await fetch(`${baseURL}/pieces/${id}`)
         const imgPiece = await reponseImgPiece.json()
 
@@ -32,7 +34,7 @@ export async function sendAdvice() {
         e.preventDefault()
         const id = document.querySelector('.envoieMessage').dataset.id
 
-        if (!id) throw new Error("L'id n'est pas renseigné") 
+        if (!id) throw new Error("L'id n'est pas renseigné")
 
         try {
             const nomOK = validerNom(e.target.querySelector("[name=utilisateur]").value)
