@@ -11,16 +11,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "globals": "^16.0.0",
     "json-server": "^0.17.0",
     "npm": "^11.2.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.23.0",
-    "eslint": "^9.23.0",
-    "globals": "^16.0.0",
-    "gulp": "^5.0.0",
-    "gulp-clean-css": "^4.3.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-rename": "^2.0.0"
+    "eslint": "^9.23.0"
   }
 }

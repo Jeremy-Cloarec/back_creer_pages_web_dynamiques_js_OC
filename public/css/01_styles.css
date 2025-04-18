@@ -1,13 +1,13 @@
 :root {
-	--brown : #9c5e0e;
+	--brown: #9c5e0e;
 	--brown-dark: #7e4b08;
-	--brown-light2 : #fdc47a;
-	--brown-light : #FFECD3;
-	--green:#168200;
-	--red:#b51212;
-	--white:#FFFFFF;
-	--black:#342819;
-	--gray:#D9D9D9;
+	--brown-light2: #fdc47a;
+	--brown-light: #FFECD3;
+	--green: #168200;
+	--red: #b51212;
+	--white: #FFFFFF;
+	--black: #342819;
+	--gray: #D9D9D9;
 	--box-shadow: 1px 2px 8.7px rgba(0, 0, 0, 0.163);
 }
 
@@ -44,12 +44,39 @@ main {
 	min-height: 100vh;
 }
 
-@media ( min-width: 1024px) {
+main>.containerButton {
+	container-type: scroll-state;
+	position: sticky;
+	top: 16px;
+	width: 100%;
+
+	>.menu {
+		@container scroll-state(stuck: top) {
+			width: fit-content;
+			box-shadow: var(--box-shadow);
+		}
+	}
+}
+
+h1 {
+	font-family: "Roboto Slab", serif;
+	text-transform: uppercase;
+	font-weight: 800;
+	text-align: center;
+	padding: 60px 25px;
+	color: var(--brown);
+	background-color: var(--brown-light);
+}
+
+h2 {
+	font-family: "Roboto Slab", serif;
+	font-weight: 800;
+	color: var(--brown);
+}
+
+@media (min-width: 1024px) {
 	main {
 		flex-direction: row;
 		padding: 32px;
 	}
 }
-
-
-

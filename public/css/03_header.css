@@ -8,11 +8,6 @@ header * {
     z-index: 1;
 }
 
-h1 {
-    font-family: "Seymour One", sans-serif;
-    text-transform: uppercase;
-    text-align: center;
-    padding: 60px 25px;
-    color: var(--brown);
-    background-color: var(--brown-light);
-}
+
+
+

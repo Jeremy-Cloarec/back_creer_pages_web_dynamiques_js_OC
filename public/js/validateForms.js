@@ -29,8 +29,8 @@ export function validerTextarea(contenu) {
         throw new Error("Le champ message doit contenir maximum 300 caractères");
     }
 
-    if (!/^[a-zA-ZÀ-ÿ0-9\s.,;:'"!?()\-]+$/.test(contenu)) {
-        throw new Error("Le champ message contient des caractères non autorisés");
+    if (!/^[a-zA-ZÀ-ÿ0-9\s.,;:'"!?()-]+$/.test(contenu)) {
+        throw new Error("Le champ message contient des caractères non autorisés (Emojis, sympbole @, #, %, &, balise <, >, / et caractères non latins)");
     }
 
     return contenu;

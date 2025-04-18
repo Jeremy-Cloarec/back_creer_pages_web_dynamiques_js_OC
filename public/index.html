@@ -8,29 +8,23 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<meta name="description" content="Site de vente de pièces détachées de voiture">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link
-		href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Seymour+One&display=swap"
+		href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
 		rel="stylesheet">
-	<link rel="stylesheet" href="./dist/styles.min.css">
-	<script type="module" src="./js/index.js"></script>
+	<link rel="stylesheet" href="./css/01_styles.css">
+	<link rel="stylesheet" href="./css/02_nav.css">
+	<link rel="stylesheet" href="./css/03_header.css">
+	<link rel="stylesheet" href="./css/04_filtres.css">
+	<link rel="stylesheet" href="./css/05_pieces.css">
+	<link rel="stylesheet" href="./css/06_button.css">
+	<link rel="stylesheet" href="./css/07_popover.css">
+	<link rel="stylesheet" href="./css/08_footer.css">
 
+	<script type="module" src="./js/index.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
 	<link rel="icon" href="images/logo.png" type="image/x-icon">
-	<style>
-		main>.containerButton {
-			container-type: scroll-state;
-			position: sticky;
-			top: 16px;
-			width: 100%;
-
-			>.menu {
-				@container scroll-state(stuck: top) {
-					width: fit-content;
-					box-shadow: var(--box-shadow);
-				}
-			}
-		}
-	</style>
 </head>
 
 <body>
@@ -127,7 +121,7 @@
 			<form class="formulaire-avis">
 				<label>
 					Nom d'utilisateur * :
-					<input type="text" name="utilisateur" placeholder="Votre nom">
+					<input type="text" name="utilisateur" placeholder="Votre nom" autofocus>
 				</label>
 				<label>
 					Votre message * :
@@ -140,12 +134,12 @@
 				<div class="errorMessage"></div>
 				<button class="envoieMessage">Envoyer</button>
 			</form>
-
 		</div>
 		<div class="success">Votre message a bien été envoyé !</div>
 	</main>
 	<footer>
-		<span>2025</span>-<a href="https://github.com/Jeremy-Cloarec" target="_blank">Jérémy <img src="./images/externalLink.png"></a>
+		<span>2025</span>-<a href="https://github.com/Jeremy-Cloarec" target="_blank">Jérémy <img
+				src="./images/externalLink.png"></a>
 	</footer>
 </body>
 

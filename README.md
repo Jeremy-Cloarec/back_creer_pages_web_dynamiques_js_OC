@@ -14,7 +14,6 @@ Projet basé sur un cours d' [OpenClassrooms](https://openclassrooms.com/fr/cour
 
 - **JavaScript Vanilla** 
 - **HTML / CSS**
-- **Gulp**
 - **Chart.js**
 - **JSON Server** 
   
@@ -25,5 +24,4 @@ npm install    # Installe les dépendances
 npm start   # Lance le json-server sur http://localhost:8080
 npm run pullDB  # Récupère la base de données distant
 npm run lint    # Analyse le code avec ESLint
-npx gulp # Minifie le CSS dans ./public/dist/styles.min.css
 ```
