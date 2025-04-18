@@ -21,6 +21,8 @@ body {
 	font-family: "Roboto", sans-serif;
 	color: var(--black);
 	font-style: normal;
+	position: relative;
+	scroll-behavior: smooth;
 }
 
 a {
@@ -30,10 +32,6 @@ a {
 
 li {
 	list-style: none;
-}
-
-body {
-	position: relative
 }
 
 main {

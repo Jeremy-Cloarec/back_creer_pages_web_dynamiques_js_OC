@@ -23,8 +23,8 @@ nav {
 nav .logo{
     width: 60px;
     height: auto;
+    cursor: pointer;
 }
-
 
 .contact-nav {
     display: flex;
