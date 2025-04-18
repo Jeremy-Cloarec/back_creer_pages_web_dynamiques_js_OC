@@ -1,6 +1,6 @@
 import { afficherGraphiqueAvis, afficherAvisPieceDispo } from "./chartGraphic.js"
 import { baseURL } from "./baseURL.js"
-import { showMenu, hideMenu } from "./menu.js"
+import { showMenu, hideMenu, sticky } from "./menu.js"
 import { generatePieces } from './generatePieces.js'
 import { mettreAJour, trierOrdreCroissant, trierOrdreDecroissant, trierParRange, trierPiecesAvecDescription, trierPiecesPasAbordables } from "./filteringPieces.js"
 import { sendAdvice } from "./sendAdvice.js"
@@ -23,7 +23,7 @@ dateFooter.textContent = date.getFullYear()
 showMenu(showMenuButton)
 hideMenu(hideMenuButton)
 hideMenu(filtreContainer)
-
+sticky()
 sendAdvice()
 
 if (pieces === null) {
