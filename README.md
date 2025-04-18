@@ -18,7 +18,7 @@ Projet basé sur un cours d' [OpenClassrooms](https://openclassrooms.com/fr/cour
 - **Chart.js**
 - **JSON Server** 
   
-## Démarrage rapide
+## Démarrage
 
 ```bash
 npm install    # Installe les dépendances
