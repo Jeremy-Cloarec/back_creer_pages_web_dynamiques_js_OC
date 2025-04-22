@@ -247,6 +247,20 @@
       "commentaire": "Bonne visibilité . Très bonne qualité.  À vous recommander ",
       "nbEtoiles": 5,
       "id": 29
+    },
+    {
+      "pieceId": "2",
+      "utilisateur": "John",
+      "commentaire": "Un freinage à la seconde près !",
+      "nbEtoiles": 5,
+      "id": 30
+    },
+    {
+      "pieceId": "3",
+      "utilisateur": "John",
+      "commentaire": "Elle éclaire vraiment bien !!!",
+      "nbEtoiles": 5,
+      "id": 31
     }
   ]
 }

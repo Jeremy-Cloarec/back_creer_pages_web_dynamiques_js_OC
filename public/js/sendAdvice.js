@@ -12,7 +12,7 @@ export function ajoutListenerEnvoyerAvis(button) {
 
         const envoyerMessage = document.querySelector(".envoieMessage")
         envoyerMessage.dataset.id = id
-        const headerPopover = document.querySelector(".headerPopover")
+        const headerPopover = document.querySelector(".headerForm")
         const h3 = headerPopover.querySelector("h3")
         const img = headerPopover.querySelector("img")
         
